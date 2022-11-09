@@ -2,12 +2,14 @@
 import './App.css';
 import NavBar from './organisms/NavBar';
 import MainRoutes from './Routes/MainRoutes';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-     <MainRoutes/>
+    <div >
+      {/* <NavBar/> */}
+     {/* <MainRoutes/> */}
+     <CartPage />
     </div>
   );
 }
