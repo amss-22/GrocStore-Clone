@@ -7,7 +7,8 @@ const initialState={
     isError: false,
     isLoading: false
 }
- const reducer=(state=initialState, action)={}
+ const reducer=(state=initialState, action)=>{ return null}
+    
 
  
  export {reducer}
