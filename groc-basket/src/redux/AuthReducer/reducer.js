@@ -7,8 +7,15 @@ const initialState={
     isError: false,
     isLoading: false
 }
- const reducer=(state=initialState, action)=>{ return null}
-    
 
- 
+ const reducer=(state=initialState, action)=>{
+    const {type, payload} = action;
+   // switch(type) {
+       
+      return state;
+
+
+ //}
+
+}
  export {reducer}
