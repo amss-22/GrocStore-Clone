@@ -7,9 +7,10 @@ import CartPage from './pages/CartPage';
 function App() {
   return (
     <div >
-      {/* <NavBar/> */}
+      <NavBar/>
      {/* <MainRoutes/> */}
-     <CartPage />
+    
+     {/* <CartPage /> */}
     </div>
   );
 }
