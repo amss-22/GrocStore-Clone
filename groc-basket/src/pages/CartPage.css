@@ -1,0 +1,22 @@
+table {
+    margin-top:8px;
+    border: 2px solid;
+    width: 100%;
+    height: 40px;
+  }
+    
+  th {
+    border-bottom: 1px solid black;
+    background-color: gray;
+    color: white;
+  }
+    
+  td {
+    text-align: center;
+    
+  }
+  #qyt{
+    display: flex;
+    gap: 4px;
+   justify-content: center;
+  }
