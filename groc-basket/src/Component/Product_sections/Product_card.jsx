@@ -1,11 +1,39 @@
 import React from "react";
-import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  Image,
+  Text,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  Button,
+  Stack,
+} from "@chakra-ui/react";
 import { GiSevenPointedStar } from "react-icons/gi";
-// import { GiSevenPointedStar } from "react-icons/gi";
+import { RiTruckFill } from "react-icons/ri";
+import { IoMdCart } from "react-icons/io";
 
-const Product_card = () => {
+const Product_card = ({
+  discount,
+  mrp,
+  brand,
+  src,
+  product_info,
+  weight,
+  rating,
+  rating_number,
+  price,
+  delievery_day_time,
+}) => {
   return (
-    <Box border="1px solid #f2f2f2" h="400px" p="5px">
+    <Box
+      border="1px solid #f2f2f2"
+      h="auto"
+      p="5px"
+      _hover={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+    >
       {/* get offer */}
       <Flex
         p={{ base: "5px", md: "5px 10px" }}
@@ -21,7 +49,7 @@ const Product_card = () => {
           textAlign={"right"}
           fontWeight="500"
         >
-          GET 24 OFF
+          GET {discount} OFF
         </Text>
         <Box pl="5px">
           <GiSevenPointedStar color="#ba5253" fontSize="10px" />
@@ -29,12 +57,7 @@ const Product_card = () => {
       </Flex>
       {/* product Image */}
       <Grid justifyItems={"center"} pt=".5rem" pb="1rem">
-        <Image
-          src="https://www.bigbasket.com/media/uploads/p/s/10000031_21-fresho-banana-yelakki.jpg"
-          alt="banana"
-          w="150px"
-          h="150px"
-        />
+        <Image src={src} alt="banana" w="150px" h="150px" />
       </Grid>
       {/* product details section  */}
       <Box px="5px">
@@ -45,7 +68,7 @@ const Product_card = () => {
           textAlign={"left"}
           fontWeight="500"
         >
-          fresho
+          {brand}
         </Text>
         <Text
           fontSize="13px"
@@ -54,7 +77,7 @@ const Product_card = () => {
           textAlign={"left"}
           fontWeight="400"
         >
-          Tender Coconut Water - No Added Sugar, Flavours
+          {product_info}
         </Text>
         <Flex py="5px" align="center">
           <Flex
@@ -73,17 +96,17 @@ const Product_card = () => {
               textAlign={"left"}
               fontWeight="400"
             >
-              4.2
+             {rating}
             </Text>
             <Box pl="5px">
               <GiSevenPointedStar color="#689f38" fontSize="10px" />
             </Box>
           </Flex>
           <Text fontSize="11px" fontFamily="" color="#4a4a4a" fontWeight="400">
-            10000 Ratings
+            {rating_number} Ratings
           </Text>
         </Flex>
-        <Flex px="10px" h="22px" border="1px solid #ccc">
+        <Flex px="10px" h="22px" border="1px solid #ccc" my="10px">
           <Text
             fontSize="12px"
             fontFamily=""
@@ -92,7 +115,7 @@ const Product_card = () => {
             fontWeight="500"
             mr="5px"
           >
-            500 g -
+           {weight}
           </Text>
           <Text
             fontSize="12px"
@@ -101,9 +124,68 @@ const Product_card = () => {
             textAlign={"left"}
             fontWeight="500"
           >
-           Rs-500
+            {price}
           </Text>
         </Flex>
+        {/* MRP, Quantity and add to cart section*/}
+        <Box bg="#f4f3f2" py="5px" px="5px">
+          <Flex align={"center"}>
+            <Text
+              fontSize="11px"
+              fontFamily=""
+              color="#666"
+              textAlign={"left"}
+              fontWeight="400"
+              mr="5px"
+            >
+              MRP {" "}
+              <span style={{ textDecoration: "line-through" }}>Rs {mrp}</span>
+            </Text>
+            <Text
+              fontSize="14px"
+              fontFamily=""
+              color="#231f20"
+              textAlign={"left"}
+              fontWeight="400"
+            >
+              Rs-{price}
+            </Text>
+          </Flex>
+          <Flex>
+            <Box mr="5px" _hover={{ color: "#79933b" }}>
+              <RiTruckFill color="#888" fontSize="18px" />
+            </Box>
+            <Text
+              fontSize="10px"
+              fontFamily=""
+              color="#333"
+              textAlign={"left"}
+              fontWeight="400"
+            >
+             {delievery_day_time}
+            </Text>
+          </Flex>
+          <Stack mb="5px">
+            <InputGroup borderColor="#ccc" size="xs">
+              <InputLeftAddon
+                children="Qty"
+                color="#999"
+                fontSize="12px"
+                bg="#eee"
+              />
+              <Input type="number" color="#333" fontSize="14px" bg="#fff" />
+            </InputGroup>
+            <Button
+              rightIcon={<IoMdCart fontSize="15px" />}
+              fontSize="14px"
+              colorScheme="teal"
+              variant="solid"
+              size="xs"
+            >
+              Add To cart
+            </Button>
+          </Stack>
+        </Box>
       </Box>
     </Box>
   );
