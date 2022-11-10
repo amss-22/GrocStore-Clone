@@ -6,8 +6,10 @@ const initialState={
     isError: false,
     isLoading: false
 }
- const reducer = (state=initialState, action)=>{
-   return null
+
+ const reducer=(state=initialState, action)=>{
+    return state;
+
  }
 
  
