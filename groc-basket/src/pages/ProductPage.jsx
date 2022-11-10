@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Grid } from '@chakra-ui/react'
+import { Box, Grid } from '@chakra-ui/react';
+import Product_right_grid from '../Component/Product_sections/Product_right_grid';
 
 const ProductPage = () => {
   return (
@@ -8,10 +9,12 @@ const ProductPage = () => {
       <Box border="1px solid blue">
         
       </Box>
-      <Box  border="1px solid gray"></Box>
+        <Box border="1px solid gray">
+        <Product_right_grid/>  
+      </Box>
       </Grid>
     </Box>
   )
 }
 
-export default ProductPage
+export default ProductPage;
