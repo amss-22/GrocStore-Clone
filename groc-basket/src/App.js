@@ -9,11 +9,18 @@ import ProductPage from './pages/ProductPage';
 function App() {
   return (
     <div >
+
       {/* <NavBar/> */}
      {/* <MainRoutes/>
      <CartPage /> */}
      <ProductPage/>
     
+
+      <NavBar/>
+     {/* <MainRoutes/> */}
+    
+     {/* <CartPage /> */}
+
     </div>
   );
 }

@@ -1,13 +1,18 @@
-import React from 'react'
+import SearchFunc from "../Components/SearchFunc"
 
-const NavBar = () => {
+
+const Navbar = () => {
+   
+   
   return (
     <div>
-      <div>
-        search
-      </div>
+        <SearchFunc/>
+
     </div>
   )
 }
 
-export default NavBar
+export default Navbar
+
+
+ 
