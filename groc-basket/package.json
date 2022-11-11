@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.9",
+    "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -15,7 +15,9 @@
     "json-server": "^0.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+
     "react-icons": "^4.6.0",
+
     "react-redux": "^8.0.5",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.4.3",
@@ -24,7 +26,9 @@
     "react-use-precision-timer": "^1.0.8",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+
     "styled-components": "^5.3.6",
+
     "web-vitals": "^2.1.4"
   },
   "scripts": {
