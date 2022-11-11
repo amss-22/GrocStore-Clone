@@ -8,7 +8,7 @@ function App() {
   return (
     <div >
       <NavBar/>
-     {/* <MainRoutes/> */}
+     <MainRoutes/>
     
      {/* <CartPage /> */}
     </div>
