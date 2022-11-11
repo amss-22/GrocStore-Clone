@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './organisms/NavBar';
 import MainRoutes from './Routes/MainRoutes';
 import CartPage from './pages/CartPage';
+import HomePage  from './pages/HomePage';
 
 function App() {
   return (
@@ -10,8 +11,10 @@ function App() {
       <NavBar/>
      {/* <MainRoutes/> */}
     
-     {/* <CartPage /> */}
+      {/* <CartPage /> */}
+      <HomePage/>
     </div>
+    
   );
 }
 
