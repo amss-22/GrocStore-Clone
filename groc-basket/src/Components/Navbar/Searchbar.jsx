@@ -9,7 +9,7 @@ const Searchbar = ({queryhandle,suggestion}) => {
     setInputText(e.target.value)
 
   }
-  
+  console.log(suggestion)
 const handleActiveSuggestion=(e)=>{
   console.log(e.keyCode)
   //38 for up
