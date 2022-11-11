@@ -38,7 +38,9 @@ switch(e.keyCode){
      <SearchWrapper>
      <Input value={inputtext} onChange={handleChange} />
      </SearchWrapper>
-     <Suggestion length={5} active={active}>
+     {
+     (suggestion.length>0)? 
+     <Suggestion length={5} active={active} array={suggestion}>
       {suggestion.map((item,index)=>{
         return (
 <div key={index} onMouseOver={()=> setActive(index+1)}>
@@ -47,18 +49,29 @@ switch(e.keyCode){
 </div>
         )
       })}
-     </Suggestion>
+     </Suggestion> : null
+     }
     </Wrapper>
   )
 }
 export default Searchbar
 
 const Suggestion = styled.div`
-border: 1px solid red;
-height: ${({length})=> `${length * 41}px` };
+border: 1px solid grey;
+border-top: 0px;
+height: ${({length,array})=> (array.length>0) ? `${length * 41}px` : `${0}px` };
 overflow: auto;
 display: flex;
 flex-direction: column;
+position: absolute;
+z-index:1000;
+background-color: white;
+width: 690px;
+
+
+
+
+
 
 & *{
   // border: 1px solid blue;
@@ -73,12 +86,13 @@ cursor: pointer;
 `
 
 const SearchWrapper=styled.div`
-border: 1px solid red;
-
+border: 1px solid grey;
 display: flex;
 align-items: center;
 paddding : 10px 5px;
 margin:auto;
+width: 500px
+
 
 
 `
@@ -90,7 +104,7 @@ flex: 1;
 
 `
 const Wrapper=styled.div`
-// border: 1px solid green;
-max-width:400px;
+// border: 5px solid purple;
+width: 700px;
 margin:auto;
 `
