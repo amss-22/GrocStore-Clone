@@ -151,7 +151,7 @@ const Product_card = ({
               Rs-{price}
             </Text>
           </Flex>
-          <Flex>
+          <Flex pr="5px">
             <Box mr="5px" _hover={{ color: "#79933b" }}>
               <RiTruckFill color="#888" fontSize="18px" />
             </Box>
