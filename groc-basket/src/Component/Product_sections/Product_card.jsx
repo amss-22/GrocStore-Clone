@@ -1,4 +1,6 @@
 import React from "react";
+import { add_product_to_cart } from "../../redux/CartReducer/action";
+
 import {
   Box,
   Flex,
@@ -14,24 +16,21 @@ import {
 import { GiSevenPointedStar } from "react-icons/gi";
 import { RiTruckFill } from "react-icons/ri";
 import { IoMdCart } from "react-icons/io";
+import { useDispatch } from "react-redux";
 
-const Product_card = ({
-  discount,
-  mrp,
-  brand,
-  src,
-  product_info,
-  weight,
-  rating,
-  rating_number,
-  price,
-  delievery_day_time,
-}) => {
+const Product_card = ({ item, id, quantity, setQuantity }) => {
+  const dispatch = useDispatch();
+  // console.log("item",item)
+  const AddToCart = (item) => {
+    console.log({ item });
+    dispatch(add_product_to_cart(item));
+  };
   return (
     <Box
       border="1px solid #f2f2f2"
       h="auto"
       p="5px"
+      key={id}
       _hover={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
     >
       {/* get offer */}
@@ -49,7 +48,7 @@ const Product_card = ({
           textAlign={"right"}
           fontWeight="500"
         >
-          GET {discount} OFF
+          GET {item.discount} OFF
         </Text>
         <Box pl="5px">
           <GiSevenPointedStar color="#ba5253" fontSize="10px" />
@@ -57,7 +56,7 @@ const Product_card = ({
       </Flex>
       {/* product Image */}
       <Grid justifyItems={"center"} pt=".5rem" pb="1rem">
-        <Image src={src} alt="banana" w="150px" h="150px" />
+        <Image src={item.src} alt={item.product_info} w="150px" h="150px" />
       </Grid>
       {/* product details section  */}
       <Box px="5px">
@@ -68,7 +67,7 @@ const Product_card = ({
           textAlign={"left"}
           fontWeight="500"
         >
-          {brand}
+          {item.brand}
         </Text>
         <Text
           fontSize="13px"
@@ -77,7 +76,7 @@ const Product_card = ({
           textAlign={"left"}
           fontWeight="400"
         >
-          {product_info}
+          {item.product_info}
         </Text>
         <Flex py="5px" align="center">
           <Flex
@@ -96,14 +95,14 @@ const Product_card = ({
               textAlign={"left"}
               fontWeight="400"
             >
-             {rating}
+              {item.rating}
             </Text>
             <Box pl="5px">
               <GiSevenPointedStar color="#689f38" fontSize="10px" />
             </Box>
           </Flex>
           <Text fontSize="11px" fontFamily="" color="#4a4a4a" fontWeight="400">
-            {rating_number} Ratings
+            {item.rating_number} Ratings
           </Text>
         </Flex>
         <Flex px="10px" h="22px" border="1px solid #ccc" my="10px">
@@ -115,7 +114,7 @@ const Product_card = ({
             fontWeight="500"
             mr="5px"
           >
-           {weight}
+            {item.weight}
           </Text>
           <Text
             fontSize="12px"
@@ -124,7 +123,7 @@ const Product_card = ({
             textAlign={"left"}
             fontWeight="500"
           >
-            {price}
+            {item.price}
           </Text>
         </Flex>
         {/* MRP, Quantity and add to cart section*/}
@@ -138,8 +137,10 @@ const Product_card = ({
               fontWeight="400"
               mr="5px"
             >
-              MRP {" "}
-              <span style={{ textDecoration: "line-through" }}>Rs {mrp}</span>
+              MRP{" "}
+              <span style={{ textDecoration: "line-through" }}>
+                Rs {item.mrp}
+              </span>
             </Text>
             <Text
               fontSize="14px"
@@ -148,7 +149,7 @@ const Product_card = ({
               textAlign={"left"}
               fontWeight="400"
             >
-              Rs-{price}
+              Rs-{item.price}
             </Text>
           </Flex>
           <Flex pr="5px">
@@ -162,7 +163,7 @@ const Product_card = ({
               textAlign={"left"}
               fontWeight="400"
             >
-             {delievery_day_time}
+              {item.delievery_day_time}
             </Text>
           </Flex>
           <Stack mb="5px">
@@ -181,6 +182,7 @@ const Product_card = ({
               colorScheme="teal"
               variant="solid"
               size="xs"
+              onClick={() => AddToCart(item)}
             >
               Add To cart
             </Button>

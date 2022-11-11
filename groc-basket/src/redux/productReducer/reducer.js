@@ -20,7 +20,6 @@ export const Product_reducer = (state = initialState, action) => {
             }
 
         case types.GET_DATA_SUCCESS:
-            console.log("##############", payload)
             return {
                 ...state,
                 products: payload,

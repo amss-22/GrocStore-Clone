@@ -8,7 +8,7 @@ const getProduct = () => (dispatch) => {
     axios.get(`http://localhost:8080/FruitsAndVegetables`)
         .then(res => {
             dispatch({ type: GET_DATA_SUCCESS, payload: res.data })
-            console.log("API NAME:- ", res)
+            // console.log("API NAME:- ", res)
         }).catch(() => {
             dispatch({ type: GET_DATA_FAILURE })
         })

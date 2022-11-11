@@ -1,25 +1,35 @@
-import React, { useEffect } from "react";
-import { Box, Grid, Text, Flex } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Box, Grid, Text, Flex, Select, Option } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../redux/productReducer/action";
 import Product_card from "./Product_card";
 import { RiTruckFill } from "react-icons/ri";
 
 const Product_right_grid = () => {
+  const [selectVal, setSelectVal] = useState("");
+  const [temp, setTemp] = useState([]);
+  const [quantity, setQuantity] = useState(1);
   const product_data = useSelector((store) => store.productdata.products);
+  const cart = useSelector((store) => store.cartReducer.cart);
+
+  console.log("cart", cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("1");
     dispatch(getProduct());
+    setTemp(product_data);
   }, []);
 
-  console.log("product_data", product_data);
+  const onChangeHandle = (e) => {
+    setSelectVal(e.target.value);
+  };
   return (
-    <Box pl={{ md: "15px" }}>
+    <Box pl={{ lg: "15px" }}>
       {/* Product category title and number of product*/}
       <Flex mb="2rem">
         <Text
-          fontSize={{ base: "16px", lg: "20px" }}
+          fontSize={{ base: "16px", md: "22px", lg: "20px" }}
           fontFamily=""
           color="#333"
           textAlign={"left"}
@@ -27,7 +37,15 @@ const Product_right_grid = () => {
         >
           Fruits & Vegetables (504)
         </Text>
-        <Box ml="auto">Sorting here</Box>
+        <Box ml="auto">
+          <Select color="#666" size="sm" onChange={onChangeHandle}>
+            <option value="pop">Popularity</option>
+            <option value="asc">price- Low to High</option>
+            <option value="desc">price- High to Low</option>
+            <option value="alpha">Alphabetically</option>
+            <option value="rating">Sort by rating</option>
+          </Select>
+        </Box>
       </Flex>
       <Flex mb="1.3rem" align={"center"} px="15px">
         <Box mr="5px">
@@ -47,38 +65,43 @@ const Product_right_grid = () => {
         <Box w="130px" h="1.5px" bg="#84c225" />
       </Box>
       <Grid
-        gridTemplateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
+        gridTemplateColumns={{
+          base: "1fr",
+          md: "repeat(3, 1fr)",
+          lg: "repeat(4, 1fr)",
+        }}
         rowGap="2rem"
       >
-        {product_data.map(
-          ({
-            discount,
-            mrp,
-            brand,
-            src,
-            product_info,
-            weight,
-            rating,
-            rating_number,
-            price,
-            delievery_day_time,
-          }) => {
+        {product_data
+          .sort((a, b) => {
+            if (selectVal === "asc") {
+              return Number(a.price) - Number(b.price);
+            }
+            if (selectVal === "desc") {
+              return Number(b.price) - Number(a.price);
+            }
+            if (selectVal === "alpha") {
+              return (
+                a.product_info.charCodeAt(0) - b.product_info.charCodeAt(0)
+              );
+            }
+            if (selectVal === "rating") {
+              return Number(b.rating) - Number(a.rating);
+            }
+            if (selectVal === "pop") {
+              return temp;
+            }
+          })
+          .map((item, id) => {
             return (
               <Product_card
-                discount={discount}
-                mrp={mrp}
-                brand={brand}
-                src={src}
-                product_info={product_info}
-                weight={weight}
-                rating={rating}
-                rating_number={rating_number}
-                price={price}
-                delievery_day_time={delievery_day_time}
+                item={item}
+                id={id}
+                quantity={quantity}
+                setQuantity={setQuantity}
               />
             );
-          }
-        )}
+          })}
       </Grid>
     </Box>
   );
