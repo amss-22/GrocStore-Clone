@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Searchbar from './Searchbar'
-import { getProductsData } from '../redux/NavigationReducer/action'
+import { getProductsData } from '../../redux/NavigationReducer/action'
 
 const SearchFunc = () => {
     const [query , setQuery]=useState("")
@@ -36,7 +36,7 @@ setQuery(data)
    
   return (
     <div>
-        <h1>Searchbar : {query}</h1>
+        
         <Searchbar queryhandle={queryhandle} suggestion={suggestion}/>
 
     </div>
