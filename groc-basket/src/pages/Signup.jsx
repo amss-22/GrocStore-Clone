@@ -1,110 +1,108 @@
-import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
-
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import { store} from "../redux/store";
+import { Button, ButtonGroup,InputGroup,InputRightElement } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 
 const Signup = () => {
 
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
+
     const [name, setName] = useState("")
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setpassword] = useState("")
     const [confirmPassword, setconfirmPassword] = useState("")
-
     const dispatch = useDispatch();
 
-    const handleSubmit =() =>{
+    const user1 = useSelector(store => store.AuthReducer.userData);
+    const user = store.getState()
+    
+    console.log('user:', user1 );
+
+
+    const handleSubmit = () => {
         dispatch({
             type: "REGISTER",
             payload : {
                 id : (new Date).getTime(),
-                name, username, password
+                name, email, password
             }
         })
     }
 
     return (
-        <div>
+        <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px"}}>
 
             <h1 
             style={{
-                fontSize: "3  00%;",
+                fontSize: "130%",
                 fontWeight: "bolder",
                 color: "green",
                 paddingBottom: "5px",
+                textAlign:"center"
                 }}>
-                Sign Up to create an account
+                Sign up to create an account
             </h1>
 
 
-            <div 
-            style={{
-                padding: "10px",
-                fontSize: "100%",
-                background: "#dedede",
-                outline: "none",
-                width: "230px",
-                border: "none"
-              }}
-            >
             <label>Name</label>
-            <input type= "text" placeholder= "Name" value={name}  onChange = {e => setName(e.target.value)}/>
-            </div>
+            <Input placeholder='Enter Name' value={name}  onChange = {e => setName(e.target.value)} />
+
+            <h1 style={{marginTop:"15px"}}>Email</h1>
+            <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
 
 
-            <div
-            style={{
-                padding: "10px",
-                fontSize: "100%",
-                background: "#dedede",
-                outline: "none",
-                width: "230px",
-                border: "none"
-              }}
-            >
-            <label>User Name</label>
-            <input type= "text" placeholder= "Username" value={username}  onChange = {e => setUsername(e.target.value)} />
-            </div>
+            <h1 style={{marginTop:"15px"}}>Password</h1>
+            <div>
+                <InputGroup size='md'>
+                <Input
+                pr='4.5rem'
+                type={show ? 'text' : 'password'}
+                placeholder='Enter Password'
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
+                />
+               
+                <InputRightElement width='4.5rem'>
+                <Button h='1.75rem' size='sm' onClick={handleClick}>
+                {show ? 'Hide' : 'Show'}
+                </Button>
+                </InputRightElement>
+            </InputGroup>
 
-
-            <div
-            style={{
-                padding: "10px",
-                fontSize: "100%",
-                background: "#dedede",
-                outline: "none",
-                width: "230px",
-                border: "none"
-              }}
-            >
-            <label>User Password</label>
-            <input type= "password" placeholder= "Password" value={password}  onChange = {e => setpassword(e.target.value)} />
-            </div>
-
+        </div>
             
-            <div
-            style={{
-                padding: "10px",
-                fontSize: "100%",
-                background: "#dedede",
-                outline: "none",
-                width: "230px",
-                border: "none"
-              }}
-            >
-            <label>confirm Password</label>
-            <input type= "password" placeholder= "confirm Password" value={confirmPassword}  onChange = {e => setconfirmPassword(e.target.value)} />
-            </div>
+            <h1 style={{marginTop:"15px"}}>Confirm paswword</h1>
+            <div>
+                <InputGroup size='md'>
+                <Input
+                pr='4.5rem'
+                type={show ? 'text' : 'password'}
+                placeholder='Enter Confirmpassword'
+                value={confirmPassword}
+                onChange={(e) => setconfirmPassword(e.target.value)}
+                />
+               
+                <InputRightElement width='4.5rem'>
+                <Button h='1.75rem' size='sm' onClick={handleClick}>
+                {show ? 'Hide' : 'Show'}
+                </Button>
+                </InputRightElement>
+            </InputGroup>
+
+        </div>
             
-            <input 
-            style={{
-                fontSize: "100%",
-                width: "150px",
-                background: "rgb(10, 255, 100)",
-                padding: "10px",
-                cursor: "pointer",
-                borderRadius: "20px",
-                fontWeight: "bolder"
-            }}
-             type= "button" value= "Sign Up" onClick = {handleSubmit} />
+            <div style={{textAlign:"center",marginTop:"32px"}}>
+            
+            <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='outline' size='lg'>
+               SIGN UP
+             </Button>
+            
+            
+            </div>
+             
            
             
         </div>
