@@ -1,27 +1,21 @@
 import * as types from "./actionTypes"
 
-const initialState={
-    isAuth:false,
-    token:'',
-    isLoading:false,
-    isErroe:false,
-    userData:{}
 
+const initialState = {
+    token: "",
+    isAuth: false,
+    isError: false,
+    isLoading: false
 }
 
-export const reducer = (oldState = initialState, action) => {
-    
-    switch(action.type) {
+const reducer = (state = initialState, action) => {
+    const { type, payload } = action;
+    // switch(type) {
 
-        case "REGISTER" :
-            return {
-                ...oldState,
-                userData: action.payload
-            }
-        
-        default :
-        return oldState
-    }
+    return state;
+
+
+    //}
 
 }
-
+export { reducer }

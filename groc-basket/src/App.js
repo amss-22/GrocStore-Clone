@@ -4,8 +4,7 @@ import NavBar from './organisms/NavBar';
 import MainRoutes from './Routes/MainRoutes';
 import CartPage from './pages/CartPage';
 
-import HomePage  from './pages/HomePage';
-import Login  from './pages/Login';
+import HomePage from './pages/HomePage';
 
 
 import ProductPage from './pages/ProductPage';
@@ -16,23 +15,23 @@ function App() {
     <div >
 
       {/* <NavBar/> */}
-      {/* <Login /> */}
-     {/* <MainRoutes/>
+      {/* <MainRoutes/>
      <CartPage /> */}
-     {/* <ProductPage/> */}
-    
-     <MainRoutes/>
-      {/* <NavBar/> */}
-     {/* <MainRoutes/> */}
-    
+      <ProductPage />
 
-      {/* <CartPage /> */}
+
+      <NavBar />
+      {/* <MainRoutes/> */}
+
+
+
+      <CartPage />
       {/* <HomePage/> */}
 
+
     </div>
-    
+
   );
 }
 
 export default App;
-  

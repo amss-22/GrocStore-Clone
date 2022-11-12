@@ -10,13 +10,10 @@ const Product_right_grid = () => {
   const [temp, setTemp] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const product_data = useSelector((store) => store.productdata.products);
-  const cart = useSelector((store) => store.cartReducer.cart);
-
-  console.log("cart", cart);
+  // const cart = useSelector((store) => store.cartReducer.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("1");
     dispatch(getProduct());
     setTemp(product_data);
   }, []);
@@ -61,7 +58,7 @@ const Product_right_grid = () => {
           All Products
         </Text>
       </Flex>
-      <Box borderBottom="1px solid #999" mt="-1rem" mb="2rem">
+      <Box borderBottom="1px solid #999" mt="-1rem" mb="1.5rem">
         <Box w="130px" h="1.5px" bg="#84c225" />
       </Box>
       <Grid
