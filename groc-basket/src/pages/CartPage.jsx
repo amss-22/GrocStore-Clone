@@ -15,6 +15,7 @@ const CartPage = () => {
 const [add, setAdd] = useState(1);
 const Cart_Products=useSelector((state)=> state.cartReducer.cart)
 
+
 console.log(Cart_Products)
 
   const Data = [
@@ -40,7 +41,7 @@ console.log(Cart_Products)
           <th>SUBTOTAL</th>
       </tr>
       {
-        Data.map((item)=>(
+        Cart_Products.map((item)=>(
           <tr>
             <td>{item.name}</td>
             <td>{item.price}</td>

@@ -5,19 +5,29 @@ const initialState={
     token:'',
     isLoading:false,
     isErroe:false,
-    userData:{}
+    userData:{},
+    adminData:{id: 1668267255159, name: 'amit', email: 'amitbhutani95@gmail.com', password: '1234'}
 
 }
 
 export const reducer = (oldState = initialState, action) => {
-    
-    switch(action.type) {
+    const {type , payload}=action
+    switch(type) {
 
-        case "REGISTER" :
+        case types.USER_LOGIN_SUCCESS :
             return {
                 ...oldState,
-                userData: action.payload
+                
+                isAuth: true,
             }
+           
+            case "REGISTER":
+                
+                return{
+                    ...oldState,
+                    userData: payload,
+                    
+                }
         
         default :
         return oldState

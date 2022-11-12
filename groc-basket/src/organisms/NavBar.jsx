@@ -10,6 +10,7 @@ import { GrLocation } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 import {AiOutlineDown, AiOutlineShoppingCart} from "react-icons/ai"
 
@@ -42,22 +43,20 @@ const Navbar = () => {
   return (
     <div>
 
-        <SearchFunc/>
-        {/* <Login /> */}
-        {/* <Signup /> */}
+      
       <Box
         display="flex"
-        border="1px solid red"
+        
         justifyContent="end"
         gap="20px"
       >
-        <Box display="flex" border="1px solid blue" gap="2px" px="20px">
+        <Box display="flex"  gap="2px" px="20px">
           <div>
             <BsTelephoneOutbound color="#012652" />
           </div>
           <p>1860 123 1000</p>
         </Box>
-        <Box display="flex" border="1px solid blue" gap="2px" px="20px">
+        <Box display="flex"  gap="2px" px="20px">
           <div>
             <GrLocation color="#012652" />
           </div>
@@ -69,7 +68,7 @@ const Navbar = () => {
           </MenuButton>
           <MenuList>
             <MenuGroup title="Profile">
-              <MenuItem>My Account</MenuItem>
+             <Link to="/login"><MenuItem>My Account</MenuItem></Link> 
               <MenuItem>My Basket</MenuItem>
               <MenuItem>My Orders</MenuItem>
               <MenuItem>My Membership</MenuItem>
@@ -87,34 +86,37 @@ const Navbar = () => {
       </Box>
 
 
-      <Box border="1px solid green" bg="#e0e0d1">
+      <Box  bg="#e0e0d1">
         <Box
           display="flex"
           width="90%"
-          border="1px solid black"
+         
           margin="auto"
           justifyContent="space-between"
           alignItems="center"
           position="relative"
         >
+          <Link to="/">
           <Image
             src={image}
             alt="Dan Abramov"
             boxSize="70px"
-            border="1px solid pink"
-          />
+           
+            />
+          </Link>
 
 
-        <SearchFunc />
+       
 
           <SearchFunc />
           <Box display="flex">
-            <AiOutlineShoppingCart size="30px" />
+          <Box cursor="pointer"><Link to="/Cart"><AiOutlineShoppingCart size="30px" /></Link></Box>
             
             <Menu>
-              <MenuButton as={Button} rightIcon={<AiOutlineDown />} bg="">
+             <MenuButton as={Button} rightIcon={ <AiOutlineDown />} bg="">
               <Heading size="4x">Items:{cart.length}</Heading>
               </MenuButton>
+             
                     {/* <MenuList>
                     <MenuItem>acc</MenuItem>
                     <MenuItem>Create a Copy</MenuItem>

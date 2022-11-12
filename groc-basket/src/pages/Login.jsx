@@ -5,9 +5,12 @@ import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 
+import { loginSuccess } from '../redux/AuthReducer/action';
+
 
 const Login = () => {
-
+  const Auth=useSelector((item)=> item.AuthReducer.isAuth)
+console.log(Auth)
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
@@ -17,13 +20,14 @@ const Login = () => {
   const dispatch = useDispatch();
   const [email,setEmail]=useState("");
   const [password,setPassword] = useState("");
-  const location=useLocation();
-  const comingFrom = location.state?.from?.pathname || "/";
+
 
   const user1 = useSelector(store => store.AuthReducer.userData);
+  const admin = useSelector(store => store.AuthReducer.adminData);
+  console.log("admin", admin)
 
   
-  console.log(user1.email);
+  // console.log(user1.email);
  
 
 
@@ -31,8 +35,16 @@ const Login = () => {
 
     if(email === user1.email && password === user1.password) {
       alert('Successfully loged in' )
+      dispatch(loginSuccess())
+      navigate('/product')
 
-    }else if(email === user1.email && password === ""){
+    }else if(email === admin.email && password === admin.password) {
+      alert('Welcome Admin' )
+      dispatch(loginSuccess())
+      navigate('/admin')
+
+    }
+    else if(email === user1.email && password === ""){
       alert('Please type your password')
       
     }else if(email === "" && password === user1.password){
