@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <>
             <div className="footer">
-                <div className="bigbasketfooter"><h1 className="footbig">bigbasket</h1> <br />
+                <div className="bigbasketfooter"><h1 className="footbig">Groc Store</h1> <br />
                     <p className="footgreen">About Us</p>
                     <p className="footgreen">In News</p>  
                     <p className="footgreen">Green bigbasket</p> 
@@ -11,17 +11,17 @@ const Footer = () => {
                     <p className="footgreen">Affiliate</p>  
                     <p className="footgreen">Terms and Conditions</p> 
                     <p className="footgreen">Careers At bigbasket</p>
-                    <p className="footgreen">bb Instant</p>
-                    <p className="footgreen">bb Daily</p> 
-                    <p className="footgreen">bb Blog</p>
-                    <p className="footgreen">bbnow</p> 
+                    <p className="footgreen">GS Instant</p>
+                    <p className="footgreen">GS Daily</p> 
+                    <p className="footgreen">GS Blog</p>
+                    <p className="footgreen">GSnow</p> 
                 </div>
 
                 <div className="help"><h1 className="footbig">Help</h1> <br />
                     <p className="footgreen">FAQs</p> 
                     <p className="footgreen">Contact Us</p> 
-                    <p className="footgreen">bb Wallet FAQs</p> 
-                    <p className="footgreen">bb Wallet T&Cs</p> 
+                    <p className="footgreen">GS Wallet FAQs</p> 
+                    <p className="footgreen">GS Wallet T&Cs</p> 
                     <p className="footgreen">Vendor Connect</p> 
                 
 
