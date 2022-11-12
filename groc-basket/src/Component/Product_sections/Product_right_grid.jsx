@@ -7,10 +7,10 @@ import { RiTruckFill } from "react-icons/ri";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 const Product_right_grid = ({temp}) => {
-  console.log("Temp", temp)
   const [selectVal, setSelectVal] = useState("");
   const [quantity, setQuantity] = useState(1);
   const product_data = useSelector((store) => store.productdata.products);
+  const prod_array = [...product_data];
   const dispatch = useDispatch();
   const [searchParam] = useSearchParams();
   const location = useLocation();
@@ -97,6 +97,7 @@ const Product_right_grid = ({temp}) => {
           .map((item, id) => {
             return (
               <Product_card
+                key={id}
                 item={item}
                 id={id}
                 quantity={quantity}

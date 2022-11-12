@@ -16,7 +16,7 @@ const [add, setAdd] = useState(1);
 const Cart_Products=useSelector((state)=> state.cartReducer.cart)
 
 
-console.log(Cart_Products)
+// console.log(Cart_Products)
 
   const Data = [
     { name: "Pateto", qyt: 1, price: "25" },

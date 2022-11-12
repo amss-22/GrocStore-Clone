@@ -21,7 +21,7 @@ const MainRoutes = () => {
 
         <Route path="/Signup" element={<Signup />}></Route>
 
-        <Route path="/Product" element={
+        <Route path="/product" element={
          
             <ProductPage />
          
