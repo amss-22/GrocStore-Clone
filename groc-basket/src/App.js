@@ -24,11 +24,11 @@ function App() {
 
 
       <NavBar />
-      <HomePage/>
-      {/* <Login />
-      <Signup /> */}
-      
-      {/* <MainRoutes/> */}
+      {/* <HomePage /> */}
+      {/* <Login /> */}
+      {/*<Signup /> */}
+
+      <MainRoutes/>
 
 
       {/* <CartPage /> */}

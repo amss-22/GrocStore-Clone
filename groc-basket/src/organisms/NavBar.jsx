@@ -1,7 +1,6 @@
-
 // import SearchFunc from "../Components/SearchFunc"
-import Login from "../pages/Login"
-import Signup from "../pages/Signup"
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 import SearchFunc from "../Components/Navbar/SearchFunc";
 import styled from "styled-components";
@@ -26,16 +25,15 @@ import {
 } from "@chakra-ui/react";
 import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   return (
     <div>
-
-        <SearchFunc/>
-        {/* <Login /> */}
-        {/* <Signup /> */}
+      <SearchFunc />
+      {/* <Login /> */}
+      {/* <Signup /> */}
       <Box
         display="flex"
         border="1px solid red"
@@ -60,7 +58,9 @@ const Navbar = () => {
           </MenuButton>
           <MenuList>
             <MenuGroup title="Profile">
-              <MenuItem>My Account</MenuItem>
+              <Link to="/login">
+                <MenuItem>My Account</MenuItem>
+              </Link>
               <MenuItem>My Basket</MenuItem>
               <MenuItem>My Orders</MenuItem>
               <MenuItem>My Membership</MenuItem>
@@ -76,20 +76,28 @@ const Navbar = () => {
           </MenuList>
         </Menu>
       </Box>
-      
-      <Box border="1px solid green"  bg="#e0e0d1"  >
-        <Box display="flex" width="90%" border="1px solid black" margin="auto" justifyContent="space-between" alignItems="center" position="relative">
-          <Image src={image} alt="Dan Abramov" boxSize="70px" border="1px solid pink"/>
 
+      <Box border="1px solid green" bg="#e0e0d1">
+        <Box
+          display="flex"
+          width="90%"
+          border="1px solid black"
+          margin="auto"
+          justifyContent="space-between"
+          alignItems="center"
+          position="relative"
+        >
+          <Image
+            src={image}
+            alt="Dan Abramov"
+            boxSize="70px"
+            border="1px solid pink"
+          />
 
-        <SearchFunc />
+          <SearchFunc />
 
-        <BsBasketFill size="30px"/>
-
+          <BsBasketFill size="30px" />
         </Box>
-       
-       
-     
       </Box>
       <ShopByCategory sidebar={sidebar} setSidebar={setSidebar} />
     </div>
