@@ -27,7 +27,7 @@ setQuery(data)
               let newSuggestion=products.filter((item)=>{
                     return (item.product_info.toLowerCase().indexOf(query.toLowerCase())) !== -1  ? true : false 
             
-                }).map((e)=> e.product_info)
+                })
                 setSuggestion(newSuggestion)
             
             }

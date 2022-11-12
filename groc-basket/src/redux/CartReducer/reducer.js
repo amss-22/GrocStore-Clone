@@ -12,11 +12,12 @@ const cartReducer = (state = initialState, action) => {
         case ADD_PRODUCT_TO_CART:
             return {
                 ...state,
-                cart: payload,
+                cart: [...state.cart,payload]
             }
         default:
             return state
     }
 }
+
 
 export { cartReducer }

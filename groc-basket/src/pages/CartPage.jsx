@@ -2,6 +2,7 @@ import { Heading } from '@chakra-ui/react';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import "./CartPage.css";
 
 // const Data = [
@@ -12,8 +13,9 @@ import "./CartPage.css";
 
 const CartPage = () => {
 const [add, setAdd] = useState(1);
+const Cart_Products=useSelector((state)=> state.cartReducer.cart)
 
-
+console.log(Cart_Products)
 
   const Data = [
     { name: "Pateto", qyt: 1, price: "25" },
