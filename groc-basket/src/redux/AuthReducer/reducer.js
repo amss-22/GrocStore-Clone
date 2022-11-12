@@ -17,12 +17,6 @@ export const reducer = (oldState = initialState, action) => {
             return {
                 ...oldState,
                 userData: action.payload,
-                isAuth: true
-            }
-        case types.USER_LOGIN_SUCCESS:
-            return {
-                ...oldState,
-                isAuth: true
             }
         default:
             return oldState

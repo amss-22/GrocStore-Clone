@@ -58,9 +58,8 @@ const Navbar = () => {
           </MenuButton>
           <MenuList>
             <MenuGroup title="Profile">
-              <Link to="/login">
-                <MenuItem>My Account</MenuItem>
-              </Link>
+              <MenuItem>My Account</MenuItem>
+
               <MenuItem>My Basket</MenuItem>
               <MenuItem>My Orders</MenuItem>
               <MenuItem>My Membership</MenuItem>
