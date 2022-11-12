@@ -24,10 +24,12 @@ function App() {
 
 
       <NavBar />
+
       {/* <HomePage/> */}
       {/* <Login />
       <Signup /> */}
       
+
       <MainRoutes/>
 
 

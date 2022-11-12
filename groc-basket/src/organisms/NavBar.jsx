@@ -1,7 +1,6 @@
-
 // import SearchFunc from "../Components/SearchFunc"
-import Login from "../pages/Login"
-import Signup from "../pages/Signup"
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 import SearchFunc from "../Components/Navbar/SearchFunc";
 import styled from "styled-components";
@@ -32,7 +31,9 @@ import {
 } from "@chakra-ui/react";
 import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
+
 import { useSelector } from "react-redux";
+
 
 
 const Navbar = () => {
@@ -43,7 +44,6 @@ const Navbar = () => {
   return (
     <div>
 
-      
       <Box
         display="flex"
         
@@ -68,7 +68,9 @@ const Navbar = () => {
           </MenuButton>
           <MenuList>
             <MenuGroup title="Profile">
+
              <Link to="/login"><MenuItem>My Account</MenuItem></Link> 
+
               <MenuItem>My Basket</MenuItem>
               <MenuItem>My Orders</MenuItem>
               <MenuItem>My Membership</MenuItem>
@@ -86,22 +88,26 @@ const Navbar = () => {
       </Box>
 
 
+
       <Box  bg="#e0e0d1">
         <Box
           display="flex"
           width="90%"
          
+
           margin="auto"
           justifyContent="space-between"
           alignItems="center"
           position="relative"
         >
+
+
           <Link to="/">
+
           <Image
             src={image}
             alt="Dan Abramov"
             boxSize="70px"
-           
             />
           </Link>
 
@@ -137,6 +143,7 @@ const Navbar = () => {
                   </MenuList>
             </Menu>
           </Box>
+
         </Box>
       </Box>
       <ShopByCategory sidebar={sidebar} setSidebar={setSidebar} />

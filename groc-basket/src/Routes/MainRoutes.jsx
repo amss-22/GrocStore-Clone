@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom"
 
 import React from 'react'
@@ -17,12 +18,13 @@ const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/login" element={<Login />}></Route>
+
         <Route path="/Signup" element={<Signup />}></Route>
 
         <Route path="/Product" element={
-          <PrivateRouter>
+         
             <ProductPage />
-          </PrivateRouter>
+         
         }></Route>
         <Route path="/" element={<SingleProduct />}></Route>
         <Route path="/Cart" element={<CartPage />}></Route>
@@ -31,9 +33,10 @@ const MainRoutes = () => {
             <Admin />
           </PrivateRouter>
         }></Route>
+
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;
