@@ -5,6 +5,7 @@ import MainRoutes from './Routes/MainRoutes';
 import CartPage from './pages/CartPage';
 
 import HomePage  from './pages/HomePage';
+import Login  from './pages/Login';
 
 
 import ProductPage from './pages/ProductPage';
@@ -15,12 +16,13 @@ function App() {
     <div >
 
       {/* <NavBar/> */}
+      {/* <Login /> */}
      {/* <MainRoutes/>
      <CartPage /> */}
      {/* <ProductPage/> */}
     
-
-      <NavBar/>
+     <MainRoutes/>
+      {/* <NavBar/> */}
      {/* <MainRoutes/> */}
     
 

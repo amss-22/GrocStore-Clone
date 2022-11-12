@@ -1,3 +1,8 @@
+
+// import SearchFunc from "../Components/SearchFunc"
+import Login from "../pages/Login"
+import Signup from "../pages/Signup"
+
 import SearchFunc from "../Components/Navbar/SearchFunc";
 import styled from "styled-components";
 import { BsTelephoneOutbound, IconName } from "react-icons/bs";
@@ -5,6 +10,7 @@ import { GrLocation } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
+
 import {
   Menu,
   MenuButton,
@@ -21,10 +27,15 @@ import {
 import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
 
+
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   return (
     <div>
+
+        <SearchFunc/>
+        {/* <Login /> */}
+        {/* <Signup /> */}
       <Box
         display="flex"
         border="1px solid red"
@@ -69,6 +80,7 @@ const Navbar = () => {
       <Box border="1px solid green"  bg="#e0e0d1"  >
         <Box display="flex" width="90%" border="1px solid black" margin="auto" justifyContent="space-between" alignItems="center" position="relative">
           <Image src={image} alt="Dan Abramov" boxSize="70px" border="1px solid pink"/>
+
 
         <SearchFunc />
 

@@ -6,6 +6,7 @@ import Login from "../pages/Login"
 import ProductPage from "../pages/ProductPage"
 import SingleProduct from "../pages/SingleProduct"
 import CartPage from "../pages/CartPage"
+import Signup from "../pages/Signup"
 
 
 const MainRoutes = () => {
@@ -13,7 +14,8 @@ const MainRoutes = () => {
     <div>
         <Routes>
             <Route path="/" element={<HomePage/>}></Route>
-            <Route path="/Login" element={<Login/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/Signup" element={<Signup />}></Route>
             <Route path="/Product" element={<ProductPage/>}></Route>
             <Route path="/:Product" element={<SingleProduct/>}></Route>
             <Route path="/Cart" element={<CartPage/>}></Route>
