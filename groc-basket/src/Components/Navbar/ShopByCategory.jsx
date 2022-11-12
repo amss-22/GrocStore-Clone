@@ -82,7 +82,7 @@ const TopCategory = ({ categoryData }) => {
       <ul className="top_category">
         {categoryData.topcats.map((topItem, index) => (
           <li className="top_category_item" key={topItem.top_category.name}>
-            <Link to={topItem.top_category.url}>
+            <Link to="/product">
               <span>{topItem.top_category.name}</span>
             </Link>
             <SubCategory
