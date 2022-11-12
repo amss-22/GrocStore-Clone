@@ -24,7 +24,7 @@ function App() {
      {/* <MainRoutes/> */}
     
 
-      {/* <CartPage /> */}
+      <CartPage />
       {/* <HomePage/> */}
 
     </div>
