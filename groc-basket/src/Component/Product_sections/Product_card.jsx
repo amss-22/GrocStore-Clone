@@ -20,9 +20,9 @@ import { useDispatch } from "react-redux";
 
 const Product_card = ({ item, id, quantity, setQuantity }) => {
   const dispatch = useDispatch();
-  // console.log("item",item)
+  // add to cart funtion
   const AddToCart = (item) => {
-    console.log({ item });
+    // console.log("item", item)
     dispatch(add_product_to_cart(item));
   };
   return (
