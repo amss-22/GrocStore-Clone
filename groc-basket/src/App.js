@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 
 
 import ProductPage from './pages/ProductPage';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import { Checkout } from './pages/Checkout';
 
 
 function App() {
@@ -17,16 +20,19 @@ function App() {
       {/* <NavBar/> */}
       {/* <MainRoutes/>
      <CartPage /> */}
-      <ProductPage />
+      {/* <ProductPage /> */}
 
 
       <NavBar />
+      <HomePage/>
+      {/* <Login />
+      <Signup /> */}
+      
       {/* <MainRoutes/> */}
 
 
-
-      <CartPage />
-      {/* <HomePage/> */}
+      {/* <CartPage /> */}
+      <Checkout />
 
 
     </div>
