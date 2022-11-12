@@ -17,7 +17,7 @@ function App() {
       {/* <NavBar/> */}
      {/* <MainRoutes/>
      <CartPage /> */}
-     <ProductPage/>
+     {/* <ProductPage/> */}
     
 
       <NavBar/>
@@ -25,7 +25,7 @@ function App() {
     
 
       {/* <CartPage /> */}
-      <HomePage/>
+      {/* <HomePage/> */}
 
     </div>
     
