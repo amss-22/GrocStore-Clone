@@ -24,15 +24,17 @@ function App() {
 
 
       <NavBar />
-      {/* <HomePage /> */}
-      {/* <Login /> */}
-      {/*<Signup /> */}
+
+      {/* <HomePage/> */}
+      {/* <Login />
+      <Signup /> */}
+      
 
       <MainRoutes/>
 
 
       {/* <CartPage /> */}
-      <Checkout />
+      {/* <Checkout /> */}
 
 
     </div>

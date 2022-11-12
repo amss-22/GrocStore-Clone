@@ -10,7 +10,9 @@ const cartReducer = (state = { cart: [] }, action) => {
         case ADD_PRODUCT_TO_CART:
             return {
                 ...state,
+
                 cart: [...state.cart, payload]
+
             }
         case RESET_CART:
             return {
@@ -20,5 +22,6 @@ const cartReducer = (state = { cart: [] }, action) => {
             return state
     }
 }
+
 
 export { cartReducer }
