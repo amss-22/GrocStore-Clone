@@ -11,6 +11,9 @@ import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
 
+import {AiOutlineDown, AiOutlineShoppingCart} from "react-icons/ai"
+
+
 import {
   Menu,
   MenuButton,
@@ -23,13 +26,19 @@ import {
   Button,
   Box,
   Image,
+  Heading,
+  
 } from "@chakra-ui/react";
 import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const cart = useSelector((state) => state.cartReducer.cart);
+  console.log(cart)
+
   return (
     <div>
 
@@ -76,20 +85,57 @@ const Navbar = () => {
           </MenuList>
         </Menu>
       </Box>
-      
-      <Box border="1px solid green"  bg="#e0e0d1"  >
-        <Box display="flex" width="90%" border="1px solid black" margin="auto" justifyContent="space-between" alignItems="center" position="relative">
-          <Image src={image} alt="Dan Abramov" boxSize="70px" border="1px solid pink"/>
+
+
+      <Box border="1px solid green" bg="#e0e0d1">
+        <Box
+          display="flex"
+          width="90%"
+          border="1px solid black"
+          margin="auto"
+          justifyContent="space-between"
+          alignItems="center"
+          position="relative"
+        >
+          <Image
+            src={image}
+            alt="Dan Abramov"
+            boxSize="70px"
+            border="1px solid pink"
+          />
 
 
         <SearchFunc />
 
-        <BsBasketFill size="30px"/>
+          <SearchFunc />
+          <Box display="flex">
+            <AiOutlineShoppingCart size="30px" />
+            
+            <Menu>
+              <MenuButton as={Button} rightIcon={<AiOutlineDown />} bg="">
+              <Heading size="4x">Items:{cart.length}</Heading>
+              </MenuButton>
+                    {/* <MenuList>
+                    <MenuItem>acc</MenuItem>
+                    <MenuItem>Create a Copy</MenuItem>
+                    <MenuItem>Mark as Draft</MenuItem>
+                    <MenuItem>Delete</MenuItem>
+                    <MenuItem>Attend a Workshop</MenuItem>
+                  </MenuList>    */}
+                  <MenuList>
+                  {cart.map((e,index)=> {
+                    return(
+                      <Box>
+                       {e.discount}
+                      { console.log(e)}
+                      </Box>
+                    )
+                  })}
 
+                  </MenuList>
+            </Menu>
+          </Box>
         </Box>
-       
-       
-     
       </Box>
       <ShopByCategory sidebar={sidebar} setSidebar={setSidebar} />
     </div>
