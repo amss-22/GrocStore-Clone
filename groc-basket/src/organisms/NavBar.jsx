@@ -1,3 +1,8 @@
+
+// import SearchFunc from "../Components/SearchFunc"
+import Login from "../pages/Login"
+import Signup from "../pages/Signup"
+
 import SearchFunc from "../Components/Navbar/SearchFunc";
 import styled from "styled-components";
 import { BsTelephoneOutbound, IconName } from "react-icons/bs";
@@ -5,7 +10,9 @@ import { GrLocation } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
+
 import {AiOutlineDown, AiOutlineShoppingCart} from "react-icons/ai"
+
 
 import {
   Menu,
@@ -26,6 +33,7 @@ import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
 import { useSelector } from "react-redux";
 
+
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const cart = useSelector((state) => state.cartReducer.cart);
@@ -33,6 +41,10 @@ const Navbar = () => {
 
   return (
     <div>
+
+        <SearchFunc/>
+        {/* <Login /> */}
+        {/* <Signup /> */}
       <Box
         display="flex"
         border="1px solid red"
@@ -74,6 +86,7 @@ const Navbar = () => {
         </Menu>
       </Box>
 
+
       <Box border="1px solid green" bg="#e0e0d1">
         <Box
           display="flex"
@@ -90,6 +103,9 @@ const Navbar = () => {
             boxSize="70px"
             border="1px solid pink"
           />
+
+
+        <SearchFunc />
 
           <SearchFunc />
           <Box display="flex">

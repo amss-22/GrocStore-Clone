@@ -12,6 +12,7 @@ import {
   InputLeftAddon,
   Button,
   Stack,
+  useToast,
 } from "@chakra-ui/react";
 import { GiSevenPointedStar } from "react-icons/gi";
 import { RiTruckFill } from "react-icons/ri";
@@ -19,10 +20,11 @@ import { IoMdCart } from "react-icons/io";
 import { useDispatch } from "react-redux";
 
 const Product_card = ({ item, id, quantity, setQuantity }) => {
+  const toast = useToast();
   const dispatch = useDispatch();
-  // console.log("item",item)
+  // add to cart funtion
   const AddToCart = (item) => {
-    console.log({ item });
+    // console.log("item", item)
     dispatch(add_product_to_cart(item));
   };
   return (
@@ -182,7 +184,17 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
               colorScheme="teal"
               variant="solid"
               size="xs"
-              onClick={() => AddToCart(item)}
+              onClick={() => {
+                AddToCart(item);
+                toast({
+                  title: "Added to cart SuccessFully",
+                  description: `${item.product_info}`,
+                  position: "top-center",
+                  status: "success",
+                  duration: 9000, 
+                  isClosable: true,
+                });
+              }}
             >
               Add To cart
             </Button>
