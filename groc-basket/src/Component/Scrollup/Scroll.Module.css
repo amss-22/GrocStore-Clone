@@ -1,0 +1,15 @@
+.top-btn{
+    font-size: 2.4rem;
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    background-color: blue;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

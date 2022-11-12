@@ -1,0 +1,168 @@
+.footer{
+    display: flex;
+    border: 1px solid black;
+    margin: auto;
+    width: 87%;
+    justify-content: space-around;
+}
+.footer2{
+    margin: auto;
+    width: 87%;
+    border: 1px solid black;
+}
+.footbig{
+    font-family:ProximaNovaA-Regular;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height:1.1rem;
+    color:rgb(108, 209, 56);
+}
+.foothr{
+    width: 87%;
+    margin: auto;
+    color: black;
+    margin-top:1%;
+  
+}
+.category{
+    display: flex;
+    justify-content:space-evenly;
+}
+.category h1{
+    
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color:rgb(108, 209, 56);
+}
+.category p{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color:rgb(158, 156, 156)
+
+}
+.paymentfooter{
+    display: flex;
+    margin-top: 2%;
+}
+.paymentfooter h1{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color:rgb(108, 209, 56);
+    margin-left: 5%;
+    width: 200%;
+}
+.paymentfooter >div>div>img{
+   width: 100%;
+   height: 100%;
+}
+.paymentimg{
+    display: flex;
+    margin-left: 2%;
+}
+.paymentfooter>div>div{
+    border: 1px solid black;
+    height: 50%;
+    width: 10%;
+    margin-left: 0.5%;
+    
+}
+.brand{
+    display: flex;
+    border: none;
+    justify-content:space-around;
+    margin-right: 6%;
+    margin-top: 2%;
+}
+.brand h1{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color:rgb(108, 209, 56);
+    margin-left: 0.7%;
+}
+.brand>p{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color:rgb(158, 156, 156);
+    margin-right: 3%;
+}
+
+.serve{
+    display: flex;
+  
+    justify-content:space-around;
+    margin-top: 2%;
+    
+}
+.serve h1{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color:rgb(108, 209, 56);
+    margin-left: 1%;
+   
+}
+.serve>p{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color:rgb(158, 156, 156);
+   
+}
+
+.footgreen{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color:rgb(128,128,144);
+    line-height: 1.25rem;
+margin-top: 0.4rem;
+margin-bottom: 0.5rem;
+}
+.socialimg{
+   margin-top: 10%;
+    display: flex;
+    
+}
+.socialimg>div{
+border: 1px solid rgb(172, 169, 169);
+height: 3rem;
+width: 3rem;
+border-radius: 50%;
+margin-left: 3%;
+
+}
+.socialimg>div>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin-right: 4%;
+}
+.socialimg>div>img:hover{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.foot3{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #cacaca;
+    height: 2rem;
+    margin: auto;
+}
+ .foot3>p{
+    font-family:ProximaNovaA-Regular;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color:rgb(128, 128, 128);
+    margin-left: 8%;
+ 
+ }
