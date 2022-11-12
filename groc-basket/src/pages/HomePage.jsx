@@ -15,6 +15,7 @@ import Brand from "../Component/Landingpage/Brand"
 import Featured from "../Component/Landingpage/Featured"
 import Bigonline from "../Component/Landingpage/bigonline"
 import Footer from "../Component/Footer/Footer"
+import GoToTop from '../Component/Scrollup/scrollup'
 import "../Component/Landingpage/Landing.Module.css"
 const HomePage = () => {
   return (
@@ -35,6 +36,7 @@ const HomePage = () => {
       <Brand />
       <Featured />
       <Bigonline />
+      <GoToTop/>
       <Footer/>
     </div>
     
