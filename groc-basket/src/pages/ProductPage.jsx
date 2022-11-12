@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 import { Box, Grid, Checkbox, Stack, Text } from "@chakra-ui/react";
 import Product_right_grid from "../Component/Product_sections/Product_right_grid";
-// import Product_left_grid from "../Component/Product_sections/Product_left_grid";
 import { useSelector } from "react-redux";
 import BorderBottom from "../Component/Product_sections/BorderBottom";
+import { useSearchParams } from "react-router-dom";
 
 const ProductPage = () => {
-  const [category, setCategory] = useState([]);
-  const [temp, setTemp] = useState([]);
+  const [searchParam, setSearchParam] = useSearchParams();
+  const [category, setCategory] = useState(searchParam.getAll("price") || []);
   const product_data = useSelector((store) => store.productdata.products);
-
-  useEffect(() => {
-    setTemp(product_data);
-  }, []);
+  const prod_array = [...product_data];
+  const [temp, setTemp] = useState([]);
 
   const handleFilter = (e) => {
     let option = e.target.value;
@@ -23,35 +21,37 @@ const ProductPage = () => {
       newCategory.splice(newCategory.indexOf(option), 1);
     } else {
       if (option === "p1") {
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) < 20;
         });
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p2") {
-        let priceFilter = product_data.filter((item) => {
-          return Number(item.price) > 21 && Number(item.price) < 50;
+        let priceFilter = prod_array.filter((item) => {
+          return Number(item.price) < 50;
         });
+        
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p3") {
-        let priceFilter = product_data.filter((item) => {
-          return Number(item.price) > 51 && Number(item.price) < 100;
+        let priceFilter = prod_array.filter((item) => {
+          return Number(item.price)  < 100;
         });
+        console.log("filter less than 21 && 50",priceFilter )
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p4") {
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) > 101 && Number(item.price) < 200;
         });
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p5") {
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) > 201 && Number(item.price) < 500;
         });
         setTemp(priceFilter);
@@ -61,7 +61,14 @@ const ProductPage = () => {
     setCategory(newCategory);
   };
 
-  console.log("category", category);
+  useEffect(() => {
+    setTemp(product_data);
+    const params = {};
+    category && (params.price = category);
+    setSearchParam(params);
+  }, [category, setSearchParam]);
+
+  console.log("temp", temp)
   return (
     <Box w={{ base: "90%", lg: "75%" }} m="auto">
       <Grid
@@ -91,19 +98,39 @@ const ProductPage = () => {
               <BorderBottom category="Price" />
               <Box>
                 <Stack spacing={[]} direction={["column"]}>
-                  <Checkbox value="p1" onChange={handleFilter}>
+                  <Checkbox
+                    value="p1"
+                    onChange={handleFilter}
+                    defaultChecked={category.includes("p1")}
+                  >
                     Less than Rs 20
                   </Checkbox>
-                  <Checkbox value="p2" onChange={handleFilter}>
+                  <Checkbox
+                    value="p2"
+                    onChange={handleFilter}
+                    defaultChecked={category.includes("p2")}
+                  >
                     Rs 21 to Rs 50{" "}
                   </Checkbox>
-                  <Checkbox value="p3" onChange={handleFilter}>
+                  <Checkbox
+                    value="p3"
+                    onChange={handleFilter}
+                    defaultChecked={category.includes("p3")}
+                  >
                     Rs 51 to Rs 100{" "}
                   </Checkbox>
-                  <Checkbox value="p4" onChange={handleFilter}>
+                  <Checkbox
+                    value="p4"
+                    onChange={handleFilter}
+                    defaultChecked={category.includes("p4")}
+                  >
                     Rs 101 to Rs 200{" "}
                   </Checkbox>
-                  <Checkbox value="p5" onChange={handleFilter}>
+                  <Checkbox
+                    value="p5"
+                    onChange={handleFilter}
+                    defaultChecked={category.includes("p5")}
+                  >
                     Rs 201 to Rs 500
                   </Checkbox>
                 </Stack>
@@ -139,7 +166,7 @@ const ProductPage = () => {
           </Box>
         </Box>
         <Box>
-          <Product_right_grid />
+          <Product_right_grid temp={temp}/>
         </Box>
       </Grid>
     </Box>

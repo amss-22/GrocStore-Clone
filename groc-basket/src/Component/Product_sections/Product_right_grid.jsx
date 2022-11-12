@@ -4,20 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../redux/productReducer/action";
 import Product_card from "./Product_card";
 import { RiTruckFill } from "react-icons/ri";
+import { useLocation, useSearchParams } from "react-router-dom";
 
-const Product_right_grid = () => {
+const Product_right_grid = ({temp}) => {
   const [selectVal, setSelectVal] = useState("");
-  const [temp, setTemp] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const product_data = useSelector((store) => store.productdata.products);
-  // const cart = useSelector((store) => store.cartReducer.cart);
+  const prod_array = [...product_data];
   const dispatch = useDispatch();
+  const [searchParam] = useSearchParams();
+  const location = useLocation();
 
   useEffect(() => {
-    dispatch(getProduct());
-    setTemp(product_data);
-  }, []);
+    const price = searchParam.getAll("price");
+    let queryParams = {
+      params: {
+        price: price,
+      },
+    };
+    dispatch(getProduct(queryParams));
+  }, [location.search]);
 
+  // console.log("filterd Data", product_data);
   const onChangeHandle = (e) => {
     setSelectVal(e.target.value);
   };
@@ -69,7 +77,7 @@ const Product_right_grid = () => {
         }}
         rowGap="2rem"
       >
-        {product_data
+        {temp
           .sort((a, b) => {
             if (selectVal === "asc") {
               return Number(a.price) - Number(b.price);
@@ -85,13 +93,11 @@ const Product_right_grid = () => {
             if (selectVal === "rating") {
               return Number(b.rating) - Number(a.rating);
             }
-            if (selectVal === "pop") {
-              return temp;
-            }
           })
           .map((item, id) => {
             return (
               <Product_card
+                key={id}
                 item={item}
                 id={id}
                 quantity={quantity}

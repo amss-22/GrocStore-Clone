@@ -16,6 +16,7 @@ export const ShopByCategory = ({ sidebar, setSidebar }) => {
 
 
   return (
+    
     <ShopByCategorySection
       left={sidebar ? "0%" : "-100%"}
       className="nav-category cats"

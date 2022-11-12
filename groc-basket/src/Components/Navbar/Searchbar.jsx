@@ -14,9 +14,9 @@ const Searchbar = ({queryhandle,suggestion}) => {
     setInputText(e.target.value)
 
   }
-  console.log(suggestion)
+  // console.log(suggestion)
 const handleActiveSuggestion=(e)=>{
-  console.log(e.keyCode)
+  // console.log(e.keyCode)
   //38 for up
   // 40 for down
 switch(e.keyCode){
@@ -36,7 +36,7 @@ switch(e.keyCode){
     queryhandle(inputtext)
 
   },[queryhandle,inputtext])
-  console.log(active)
+  // console.log(active)
 
   return (
     <Wrapper onKeyUp={handleActiveSuggestion}>
