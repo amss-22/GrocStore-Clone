@@ -10,6 +10,7 @@ const Signup = () => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show)
 
+
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setpassword] = useState("")
