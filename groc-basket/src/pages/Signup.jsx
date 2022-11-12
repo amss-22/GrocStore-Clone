@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import { store} from "../redux/store";
-import { Button, ButtonGroup,InputGroup,InputRightElement } from '@chakra-ui/react';
+import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 
 const Signup = () => {
 
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show)
 
     const [name, setName] = useState("")
@@ -33,7 +33,7 @@ const Signup = () => {
     }
 
     return (
-        <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px"}}>
+        <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px",marginTop:"50px"}}>
 
             <h1 
             style={{
@@ -96,15 +96,12 @@ const Signup = () => {
             
             <div style={{textAlign:"center",marginTop:"32px"}}>
             
-            <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='outline' size='lg'>
+
+            <Link to="/login" >
+                <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='outline' size='lg'>
                SIGN UP
-             </Button>
-            
-            
-            </div>
-             
-           
-            
+             </Button></Link>
+            </div>      
         </div>
     )
 }

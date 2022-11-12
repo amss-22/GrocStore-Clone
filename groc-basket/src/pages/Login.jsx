@@ -1,11 +1,10 @@
 import React,{useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-// import {login} from "../redux/AuthReducer/action";
-import { USER_LOGIN_SUCCESS } from '../redux/AuthReducer/actionTypes';
 import {useNavigate,useLocation} from "react-router-dom";
-import { AlertTitle } from '@chakra-ui/react';
-import { Button, ButtonGroup,InputGroup,InputRightElement } from '@chakra-ui/react';
-import { Input } from '@chakra-ui/react'
+import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
 
@@ -31,7 +30,7 @@ const Login = () => {
   const handleSubmit = (e)=>{
 
     if(email === user1.email && password === user1.password) {
-      alert('Successfully loged in')
+      alert('Successfully loged in' )
 
     }else if(email === user1.email && password === ""){
       alert('Please type your password')
@@ -44,11 +43,12 @@ const Login = () => {
 
     }else{
       alert('Wrong email or password')
+      
     }
    
   };
   return (
-    <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px"}}>
+    <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px",marginTop:"50px"}}>
       
     <h1 style={{
     fontSize: "130%",
@@ -60,10 +60,11 @@ const Login = () => {
 }}>
   Login to Groc Store
   </h1>
+  <div style={{color:"red", fontSize:"18px", textAlign:"center", marginTop:"10px"}}><Link to="/Signup" >Create an account.</Link></div>
   <form onSubmit={handleSubmit}>
 
     <div>
-            <label>Email</label>
+            <h1 style={{marginTop:"15px"}}>Email</h1>
             <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
     </div>
         
