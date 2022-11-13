@@ -20,11 +20,11 @@ const MainRoutes = () => {
         <Route path="/Signup" element={<Signup />}></Route>
 
         <Route path="/product" element={
-          <PrivateRouter>
+          
             <ProductPage />
-          </PrivateRouter>
+          
         }></Route>
-        <Route path="/" element={<SingleProduct />}></Route>
+        <Route path="/:category/:id" element={<SingleProduct />}></Route>
         <Route path="/Cart" element={<CartPage />}></Route>
         <Route path="/Admin" element={
           <PrivateRouter>

@@ -18,22 +18,28 @@ import { GiSevenPointedStar } from "react-icons/gi";
 import { RiTruckFill } from "react-icons/ri";
 import { IoMdCart } from "react-icons/io";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { setSingleData } from "../../redux/singleProductReducer/action";
 
 const Product_card = ({ item, id, quantity, setQuantity }) => {
   const toast = useToast();
   const dispatch = useDispatch();
   // add to cart funtion
   const AddToCart = (item) => {
-    // console.log("item", item)
+    console.log("item", item)
     dispatch(add_product_to_cart(item));
   };
   return (
+    <Box>
+      <Link to={`/FruitsAndVegetables/${item.id}`} onClick={()=> dispatch(setSingleData({...item}))}>
     <Box
       border="1px solid #f2f2f2"
       h="auto"
       p="5px"
       key={id}
       _hover={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+
+
     >
       {/* get offer */}
       <Flex
@@ -58,7 +64,7 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
       </Flex>
       {/* product Image */}
       <Grid justifyItems={"center"} pt=".5rem" pb="1rem">
-        <Image src={item.src} alt={item.product_info} w="150px" h="150px" />
+        <Image src={item.img_src} alt={item.product_info} w="150px" h="150px" />
       </Grid>
       {/* product details section  */}
       <Box px="5px">
@@ -201,6 +207,8 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
           </Stack>
         </Box>
       </Box>
+    </Box>
+    </Link>
     </Box>
   );
 };

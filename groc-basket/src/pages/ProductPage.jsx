@@ -23,7 +23,9 @@ const ProductPage = () => {
       if (option === "p1") {
         let priceFilter = prod_array.filter((item) => {
           return Number(item.price) < 20;
+          
         });
+        // console.log(priceFilter)
         setTemp(priceFilter);
         newCategory.push(option);
       }
@@ -39,7 +41,7 @@ const ProductPage = () => {
         let priceFilter = prod_array.filter((item) => {
           return Number(item.price)  < 100;
         });
-        console.log("filter less than 21 && 50",priceFilter )
+        // console.log("filter less than 21 && 50",priceFilter )
         setTemp(priceFilter);
         newCategory.push(option);
       }
@@ -61,14 +63,19 @@ const ProductPage = () => {
     setCategory(newCategory);
   };
 
-  useEffect(() => {
+  useEffect(()=>{
     setTemp(product_data);
+  },[])
+
+
+  useEffect(() => {
+  
     const params = {};
     category && (params.price = category);
     setSearchParam(params);
   }, [category, setSearchParam]);
 
-  console.log("temp", temp)
+  // console.log("temp", temp)
   return (
     <Box w={{ base: "90%", lg: "75%" }} m="auto">
       <Grid

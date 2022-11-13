@@ -36,6 +36,7 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const cart = useSelector((state) => state.cartReducer.cart);
   // console.log(cart)
+  // console.log("cart",cart)
 
   return (
     <div>
@@ -111,16 +112,27 @@ const Navbar = () => {
                     <MenuItem>Delete</MenuItem>
                     <MenuItem>Attend a Workshop</MenuItem>
                   </MenuList>    */}
-              <MenuList>
-                {cart.map((e, index) => {
-                  return (
-                    <Box>
-                      {e.discount}
-                      {/* { console.log(e)} */}
-                    </Box>
-                  );
-                })}
-              </MenuList>
+                  <MenuList>
+
+                  {cart.map((item,index)=> {
+                   
+                    return(
+                      <Box key={index} display="flex" alignItems="center" gap="25px" backgroundColor="#E0F7FA" >
+                        
+                      <Heading size="4" >{index+1}</Heading>
+                        <img src={item.img_src} style={{height: "40px"}} />
+                      <Heading size="4" color="green.600"  _hover={{
+                        background: "white",
+                        color: "teal.500",
+                      }}>{item.product_info}</Heading>
+                      
+                      </Box>
+                    )
+                    {console.log()}
+                  })}
+                  
+
+                  </MenuList>
             </Menu>
           </Box>
         </Box>

@@ -14,6 +14,7 @@ import "./CartPage.css";
 const CartPage = () => {
 const [add, setAdd] = useState(1);
 const Cart_Products=useSelector((state)=> state.cartReducer.cart)
+console.log("cart", Cart_Products)
 
 
 // console.log(Cart_Products)
@@ -43,8 +44,8 @@ const Cart_Products=useSelector((state)=> state.cartReducer.cart)
       {
         Cart_Products.map((item)=>(
           <tr>
-            <td>{item.name}</td>
-            <td>{item.price}</td>
+            <td>{item.item.brand}</td>
+            <td>{item.item.price}</td>
             <td id='qyt'>
               <button onClick={()=> setAdd(add-1)} >-</button>
               <p>{add}</p>
