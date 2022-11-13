@@ -6,7 +6,7 @@ import CartPage from './pages/CartPage';
 
 import HomePage from './pages/HomePage';
 
-
+import Footer from "./Component/Footer/Footer"
 import ProductPage from './pages/ProductPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -31,7 +31,7 @@ function App() {
       
 
       <MainRoutes/>
-
+<Footer/>
 
       {/* <CartPage /> */}
       {/* <Checkout /> */}
