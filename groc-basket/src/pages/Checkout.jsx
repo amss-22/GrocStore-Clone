@@ -4,11 +4,27 @@ import {
     FormControl,
     FormLabel,
   } from '@chakra-ui/react'
+  import { useToast } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 export const Checkout = () => {
+  const toast=useToast()
+  let total = JSON.parse(localStorage.getItem("total"));
+
+  const handleSub = ()=>{
+    toast({
+      title: "Payment SuccessFully",
+      // description: `${item.product_info}`,
+      position: "top-center",
+      status: "success",
+      duration: 2000, 
+      isClosable: true,
+    });
+  }
+
   return (
     <Flex>
-    <Box m={10}  w={"70%"} bg="gray.300" h={"auto"} >
+    <Box m={10}  w={"70%"} bg="gray.200" h={"auto"} border="2px solid blue" >
         <Heading m={5} color={"gray.400"} >
             Delivery
         </Heading>
@@ -59,7 +75,7 @@ export const Checkout = () => {
         </Box>
         </Grid>
         </Box>
-  <Button m={6} bg={"green.500"} alignItem="center" ml={80} >GO TO PAYMENT</Button>
+ <Link to="/"> <Button m={6} bg={"green.500"} alignItem="center" ml={80} onClick={handleSub} >GO TO PAYMENT</Button> </Link>
 </FormControl>
     </Box>
     <Box m="10" w={"28%"} bg="gray.400" h={200}>
@@ -68,7 +84,7 @@ export const Checkout = () => {
                 <Flex m={3}>
                 <Text >Basket Value</Text>
                 <Spacer />
-                <Text>Rs 609</Text>
+                <Text>Rs {total}</Text>
                 </Flex>
                 <Flex m={3} >
                 <Text>Delivery Charges</Text>
@@ -78,7 +94,7 @@ export const Checkout = () => {
                 <Flex m={3} >
                 <Text color="black.600" fontSize={"xl"}>Total Amount</Text>
                 <Spacer />
-                <Text color="black.600" fontSize={"xl"} >609</Text>
+                <Text color="black.600" fontSize={"xl"} >{total}</Text>
                 </Flex>
             </Box>
            </Box>
