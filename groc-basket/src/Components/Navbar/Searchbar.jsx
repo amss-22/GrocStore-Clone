@@ -4,8 +4,12 @@ import { FaRupeeSign } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import styled from "styled-components"
 import { add_product_to_cart } from '../../redux/CartReducer/action'
+import { Link } from 'react-router-dom'
+import { setSingleData } from '../../redux/singleProductReducer/action'
+import { useToast } from '@chakra-ui/react'
 
 const Searchbar = ({queryhandle,suggestion}) => {
+  const toast=useToast()
   const [inputtext , setInputText]=useState("")
   const [active , setActive]=useState(0)
   const dispatch=useDispatch()
@@ -14,9 +18,9 @@ const Searchbar = ({queryhandle,suggestion}) => {
     setInputText(e.target.value)
 
   }
-  console.log(suggestion)
+  // console.log(suggestion)
 const handleActiveSuggestion=(e)=>{
-  console.log(e.keyCode)
+  // console.log(e.keyCode)
   //38 for up
   // 40 for down
 switch(e.keyCode){
@@ -36,7 +40,7 @@ switch(e.keyCode){
     queryhandle(inputtext)
 
   },[queryhandle,inputtext])
-  console.log(active)
+  // console.log(active)
 
   return (
     <Wrapper onKeyUp={handleActiveSuggestion}>
@@ -50,8 +54,18 @@ switch(e.keyCode){
       return (
 <div key={index} onMouseOver={()=> setActive(index+1)} style={{display:"flex", alignItems: "center"}}>
 <img src={item.img_src} style={{height: "40px"}} />
-{item.product_info}
-<div style={{display:"flex", alignItems: "center"}}  onClick={()=> dispatch(add_product_to_cart({item}))}><BsFillBagPlusFill size="35px"/>Add</div>
+<Link to={`/${item.catergory}/${item.id}`} onClick={()=> dispatch(setSingleData({...item}))}>{item.product_info}</Link>
+<div style={{display:"flex", alignItems: "center"}}  onClick={()=> {
+  dispatch(add_product_to_cart({...item})) ;
+  toast({
+    title: "Added to cart SuccessFully",
+    description: `${item.product_info}`,
+    position: "top-center",
+    status: "success",
+    duration: 2000, 
+    isClosable: true,
+  });
+} } ><BsFillBagPlusFill size="35px"/>Add</div>
 <div style={{display:"flex", alignItems: "center" , flexDirection:"end" }} ><FaRupeeSign size="35px"/>{item.price}</div>
 
 

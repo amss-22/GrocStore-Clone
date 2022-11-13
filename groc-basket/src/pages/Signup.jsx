@@ -20,7 +20,7 @@ const Signup = () => {
     const user1 = useSelector(store => store.AuthReducer.userData);
     const user = store.getState()
     
-    console.log('user:', user1 );
+    // console.log('user:', user1 );
 
 
     const handleSubmit = () => {

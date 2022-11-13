@@ -24,7 +24,7 @@ const getProductsData=(params)=> (dispatch)=>{
     dispatch(getDataRequest())
     return (
         axios.get(`http://localhost:8080/Navbar`,params).then((r)=>{
-           console.log(r.data)
+        //    console.log(r.data)
            dispatch(getDataSuccess(r.data)) 
         })
         .catch((e)=>{

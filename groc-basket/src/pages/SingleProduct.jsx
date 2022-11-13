@@ -1,8 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 
 const SingleProduct = () => {
+  const single=useSelector((state)=> state.SingleProductReducer.singleData)
+  // console.log("single",single)
   return (
-    <div>SingleProduct</div>
+    <div>{single.product_info}</div>
   )
 }
 

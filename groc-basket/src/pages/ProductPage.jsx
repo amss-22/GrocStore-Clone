@@ -9,6 +9,7 @@ const ProductPage = () => {
   const [searchParam, setSearchParam] = useSearchParams();
   const [category, setCategory] = useState(searchParam.getAll("price") || []);
   const product_data = useSelector((store) => store.productdata.products);
+  const prod_array = [...product_data];
   const [temp, setTemp] = useState([]);
 
   const handleFilter = (e) => {
@@ -20,37 +21,39 @@ const ProductPage = () => {
       newCategory.splice(newCategory.indexOf(option), 1);
     } else {
       if (option === "p1") {
-        console.log("before:-", temp)
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) < 20;
+          
         });
+        // console.log(priceFilter)
         setTemp(priceFilter);
-        console.log("After:-", temp)
         newCategory.push(option);
       }
       if (option === "p2") {
-        let priceFilter = product_data.filter((item) => {
-          return Number(item.price) > 21 && Number(item.price) < 50;
+        let priceFilter = prod_array.filter((item) => {
+          return Number(item.price) < 50;
         });
+        
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p3") {
-        let priceFilter = product_data.filter((item) => {
-          return Number(item.price) > 51 && Number(item.price) < 100;
+        let priceFilter = prod_array.filter((item) => {
+          return Number(item.price)  < 100;
         });
+        // console.log("filter less than 21 && 50",priceFilter )
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p4") {
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) > 101 && Number(item.price) < 200;
         });
         setTemp(priceFilter);
         newCategory.push(option);
       }
       if (option === "p5") {
-        let priceFilter = product_data.filter((item) => {
+        let priceFilter = prod_array.filter((item) => {
           return Number(item.price) > 201 && Number(item.price) < 500;
         });
         setTemp(priceFilter);
@@ -60,16 +63,19 @@ const ProductPage = () => {
     setCategory(newCategory);
   };
 
-  useEffect(() => {
-    console.log("123456789");
+  useEffect(()=>{
     setTemp(product_data);
+  },[])
+
+
+  useEffect(() => {
+  
     const params = {};
     category && (params.price = category);
     setSearchParam(params);
-  }, [category, setSearchParam, temp]);
+  }, [category, setSearchParam]);
 
-  // console.log("category", category);
-  console.log("Data", temp);
+  // console.log("temp", temp)
   return (
     <Box w={{ base: "90%", lg: "75%" }} m="auto">
       <Grid
@@ -167,7 +173,7 @@ const ProductPage = () => {
           </Box>
         </Box>
         <Box>
-          <Product_right_grid temp={temp} />
+          <Product_right_grid temp={temp}/>
         </Box>
       </Grid>
     </Box>

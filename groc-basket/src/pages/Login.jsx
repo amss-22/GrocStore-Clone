@@ -10,7 +10,7 @@ import { loginSuccess } from '../redux/AuthReducer/action';
 
 const Login = () => {
   const Auth=useSelector((item)=> item.AuthReducer.isAuth)
-console.log(Auth)
+// console.log(Auth)
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
@@ -24,7 +24,7 @@ console.log(Auth)
 
   const user1 = useSelector(store => store.AuthReducer.userData);
   const admin = useSelector(store => store.AuthReducer.adminData);
-  console.log("admin", admin)
+  // console.log("admin", admin)
 
   
   // console.log(user1.email);
