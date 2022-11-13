@@ -1,0 +1,161 @@
+.newlaunch img{
+ 
+  width: 99.8%;
+}
+.newlaunch2{
+    margin-top: 2%;
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+.newlaunch2>img{
+    
+    margin-left: 0.5rem;
+}
+.myb{
+    font-family:ProximaNovaA-Regular;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: normal;
+    margin: auto;
+    justify-content: center;
+    margin-top: 2%;
+    margin-left: 45%;
+    margin-bottom: 2%;
+   
+}
+.myb2{
+    width: 87%;
+    border: 1px solid black;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 2%;
+}
+.bank{
+    display: flex;
+    width: 87%;
+    margin: auto;
+}
+.bank img{
+    width: 95%;
+    height: 100%;
+}
+.hrbank{
+    width: 87%;
+    margin: auto;
+    color:black;
+    margin-top: -1.5%;
+    margin-bottom: 2%;
+ 
+}
+.Fruit{
+    margin: auto;
+    width: 87%;
+    display: flex;
+    margin-bottom: 2%;
+}
+.Fruit img{
+    width: 100%;
+}
+.Fruit>div>img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.kitchen{
+    margin: auto;
+    width: 87%;
+    display: flex;
+    margin-bottom: 2%;
+}
+.kitchen img{
+    width: 100%;
+}
+.kitchen>div>img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.bank>div>img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.snack{
+    font-family:ProximaNovaA-Regular;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: normal;
+    color:rgb(59, 58, 58);
+    margin-bottom: 2%;
+    margin-left: 45%;
+    margin-top: 2%;
+   
+}
+.brand{
+    border: 1px solid rgb(201, 197, 197);
+    margin: 0.5rem;
+}
+.beverage{
+  
+    display: flex;
+    width: 87%;
+    margin: auto;
+}
+.banner{
+    width: 87%;
+    margin: auto;
+}
+.bigo{
+    border: 1px solid black;
+    margin: auto;
+    width: 87%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.onlinegroc2{
+    font-family:ProximaNFonovaA-Regular;
+   font-size: 0.875rem;
+ font-weight: 400;
+ line-height: 1.25rem;
+ color:rgb(107, 104, 104);
+ margin-left: 2%;
+ 
+}
+.onlinegroc{
+    font-family:ProximaNovaA-Regular;
+    font-size: 1.875rem;
+    font-weight: 500;
+    line-height: 2.0625rem;
+    color:rgb(51, 51, 51);
+    margin-bottom: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.readmore{
+    border: 1px solid black;
+    width: 8%;
+    height: 1.5rem;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+    
+}
+.banner img{
+    border: 1px solid rgb(201, 197, 197);
+    width: 100%;
+}
+.vegispan{
+    color: #67C71F;
+}
+.coffee{
+  margin-left: 3%;
+}
+.coffee1{
+    display: flex;
+}
+.beverg{
+    border: 1px solid rgb(201, 197, 197);
+}
+.coff1{
+    border: 1px solid rgb(201, 197, 197);
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+.coffee2{
+    display: flex;
+}

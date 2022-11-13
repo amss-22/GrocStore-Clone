@@ -1,0 +1,1 @@
+export const GET_SINGLE_DATA="GET_SINGLE_DATA"
