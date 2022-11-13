@@ -10,6 +10,7 @@ import CartPage from "../pages/CartPage"
 import Signup from "../pages/Signup"
 import PrivateRouter from "./PrivateRoute"
 import { Admin } from "../pages/Admin"
+import { Checkout } from "../pages/Checkout"
 
 
 const MainRoutes = () => {
@@ -32,8 +33,9 @@ const MainRoutes = () => {
           <PrivateRouter>
             <Admin />
           </PrivateRouter>
-        }></Route>
-
+        }>
+        </Route>
+       <Route path="/Checkout" element={<Checkout />} ></Route>
       </Routes>
     </div>
   );

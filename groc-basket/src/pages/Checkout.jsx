@@ -6,9 +6,12 @@ import {
   } from '@chakra-ui/react'
 
 export const Checkout = () => {
+
+  let total = JSON.parse(localStorage.getItem("total"));
+
   return (
     <Flex>
-    <Box m={10}  w={"70%"} bg="gray.300" h={"auto"} >
+    <Box m={10}  w={"70%"} bg="gray.200" h={"auto"} border="2px solid blue" >
         <Heading m={5} color={"gray.400"} >
             Delivery
         </Heading>
@@ -68,7 +71,7 @@ export const Checkout = () => {
                 <Flex m={3}>
                 <Text >Basket Value</Text>
                 <Spacer />
-                <Text>Rs 609</Text>
+                <Text>Rs {total}</Text>
                 </Flex>
                 <Flex m={3} >
                 <Text>Delivery Charges</Text>
@@ -78,7 +81,7 @@ export const Checkout = () => {
                 <Flex m={3} >
                 <Text color="black.600" fontSize={"xl"}>Total Amount</Text>
                 <Spacer />
-                <Text color="black.600" fontSize={"xl"} >609</Text>
+                <Text color="black.600" fontSize={"xl"} >{total}</Text>
                 </Flex>
             </Box>
            </Box>
