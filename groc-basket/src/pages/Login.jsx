@@ -36,12 +36,12 @@ const Login = () => {
     if(email === user1.email && password === user1.password) {
       alert('Successfully loged in' )
       dispatch(loginSuccess())
-      navigate('/product')
+      navigate('/Cart')
 
     }else if(email === admin.email && password === admin.password) {
       alert('Welcome Admin' )
       dispatch(loginSuccess())
-      navigate('/admin')
+      navigate('/Admin')
 
     }
     else if(email === user1.email && password === ""){

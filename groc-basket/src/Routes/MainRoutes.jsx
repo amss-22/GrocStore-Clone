@@ -9,6 +9,7 @@ import CartPage from "../pages/CartPage"
 import Signup from "../pages/Signup"
 import PrivateRouter from "./PrivateRoute"
 import { Admin } from "../pages/Admin"
+import { Checkout } from "../pages/Checkout"
 
 
 const MainRoutes = () => {
@@ -28,13 +29,18 @@ const MainRoutes = () => {
         <Route path="/Cart" element={
           <PrivateRouter>
             <CartPage />
-
           </PrivateRouter>
         }></Route>
         <Route path="/Admin" element={
           <PrivateRouter>
             <Admin />
           </PrivateRouter>
+        }></Route>
+        
+        <Route path="/checkout" element={
+          <PrivateRouter>
+        <Checkout />
+        </PrivateRouter>
         }></Route>
       </Routes>
     </div>
