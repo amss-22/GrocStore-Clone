@@ -4,10 +4,23 @@ import {
     FormControl,
     FormLabel,
   } from '@chakra-ui/react'
+  import { useToast } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 export const Checkout = () => {
-
+  const toast=useToast()
   let total = JSON.parse(localStorage.getItem("total"));
+
+  const handleSub = ()=>{
+    toast({
+      title: "Payment SuccessFully",
+      // description: `${item.product_info}`,
+      position: "top-center",
+      status: "success",
+      duration: 2000, 
+      isClosable: true,
+    });
+  }
 
   return (
     <Flex>
@@ -62,7 +75,7 @@ export const Checkout = () => {
         </Box>
         </Grid>
         </Box>
-  <Button m={6} bg={"green.500"} alignItem="center" ml={80} >GO TO PAYMENT</Button>
+ <Link to="/"> <Button m={6} bg={"green.500"} alignItem="center" ml={80} onClick={handleSub} >GO TO PAYMENT</Button> </Link>
 </FormControl>
     </Box>
     <Box m="10" w={"28%"} bg="gray.400" h={200}>

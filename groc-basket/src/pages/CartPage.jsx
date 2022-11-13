@@ -20,7 +20,7 @@ const cart = useSelector(store=> store.cartReducer.cart);
 const tsum = [];
 
 cart.map((item)=>{
- return tsum.push(item.item.price);
+ return tsum.push(item.price);
 })
  for(let i=0; i<cart.length; i++){
      total +=  Math.floor(+(tsum[i]));
@@ -59,16 +59,16 @@ const handleEmpty = ()=>{
       return (
           <tr key={item.id}>
             <td>
-              <Image ml={20} w={"80px"}  h={"90px"} src={item.item.img_src} />
+              <Image ml={20} w={"80px"}  h={"90px"} src={item.img_src} />
             </td>
-            <td id="prod" >{item.item.product_info}</td>
-            <td>{item.item.price}</td>
+            <td id="prod" >{item.product_info}</td>
+            <td>{item.price}</td>
             <td id='qyt'>
               <button onClick={()=> setAdd(add-1)} >-</button>
               <p>{add}</p>
               <button onClick={()=> setAdd(add+1)} >+</button>
             </td>
-            <td>{item.item.price*add}</td>
+            <td>{item.price*add}</td>
           </tr>
         )
       })

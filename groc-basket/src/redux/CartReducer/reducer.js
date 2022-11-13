@@ -15,8 +15,10 @@ const cartReducer = (state = { cart: [] }, action) => {
 
             }
         case RESET_CART:
-            return {
-                cart: [...state.cart, []],
+           
+        return {
+            ...state,
+                cart: [],
             };
         default:
             return state
