@@ -31,7 +31,7 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
   };
   return (
     <Box>
-      <Link to={`/FruitsAndVegetables/${item.id}`} onClick={()=> dispatch(setSingleData({...item}))}>
+      
     <Box
       border="1px solid #f2f2f2"
       h="auto"
@@ -64,7 +64,7 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
       </Flex>
       {/* product Image */}
       <Grid justifyItems={"center"} pt=".5rem" pb="1rem">
-        <Image src={item.img_src} alt={item.product_info} w="150px" h="150px" />
+      <Link to={`/FruitsAndVegetables/${item.id}`} onClick={()=> dispatch(setSingleData({...item}))}> <Image src={item.img_src} alt={item.product_info} w="150px" h="150px" /></Link>
       </Grid>
       {/* product details section  */}
       <Box px="5px">
@@ -208,7 +208,7 @@ const Product_card = ({ item, id, quantity, setQuantity }) => {
         </Box>
       </Box>
     </Box>
-    </Link>
+    
     </Box>
   );
 };

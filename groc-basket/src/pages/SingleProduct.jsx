@@ -22,7 +22,8 @@ import { useSelector } from "react-redux";
      
 }*/}
 const SingleProduct = () => {
-  const obj = useSelector((state)=> state.cartReducer.cart)
+  const obj = useSelector((state)=> state.SingleProductReducer.singleData)
+  console.log("obj",obj)
     return (
         <>
             <div className="singlepage">
@@ -47,7 +48,7 @@ const SingleProduct = () => {
                 </div>
                 <div className="single2">
                     <div className="capcium">
-                        <Image image={obj.src}/>
+                        <Image image={obj.img_src}/>
                     </div>
                     <div className="capciumdata">
                         <button className="freshbtn">{obj.brand}</button> <br />
@@ -146,21 +147,23 @@ const SingleProduct = () => {
 
 export default SingleProduct;
 
-const Image = () => {
+const Image = ({image}) => {
+    console.log("Image", {image})
     
     return (
         <>
+        
             <div style={{width:"450px",height:"500px"}}>
             <ReactImageMagnify {...{
     smallImage: {
         alt: 'Wristwatch by Ted Baker London',
         isFluidWidth: true,
-                    src: "https://www.bigbasket.com/media/uploads/p/l/10000069_20-fresho-capsicum-green.jpg",
+        src:image,
                     width: 300,
                    height:450,
     },
     largeImage: {
-        src:"https://www.bigbasket.com/media/uploads/p/l/10000069_20-fresho-capsicum-green.jpg",
+        src:image,
         width: 800,
         height: 800
     }
