@@ -18,6 +18,15 @@ Redux,
 Chakra-UI
 
 
+# Some Glimpse and Screenshots of our website:-
+# Home Page -
+This is the main landing page of our website. Here clicking on any option on the Navbar will redirect the user to the respective Page.
+It is fully functional and responsive.
+
+
+![image](https://user-images.githubusercontent.com/101565730/201592305-3771aa99-182d-4c43-bfdb-f5f9238b97cc.png)
+
+
 # Our Team Members:-
 Amit Bhutani
 
