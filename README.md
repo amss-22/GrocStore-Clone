@@ -24,7 +24,20 @@ This is the main landing page of our website. Here clicking on any option on the
 It is fully functional and responsive.
 
 
-![image](https://user-images.githubusercontent.com/101565730/201592305-3771aa99-182d-4c43-bfdb-f5f9238b97cc.png)
+![image](https://user-images.githubusercontent.com/101565730/201592601-da7ad561-199c-4449-9622-489d7ed02791.png)
+
+# Sign In From -
+Here we have a sign in window, if visiter existing user then he can sign in by entering his/her credential like email and password
+After filling corect creadential user will be redirect to the home page proceed further.
+![image](https://user-images.githubusercontent.com/101565730/201592779-c6e9e1fa-4b2c-47d0-b8d5-d07d3ebe9976.png)
+
+# Navbar -
+In this paga user will be able to see produts & add product to cart,Search Functionality.
+![image](https://user-images.githubusercontent.com/101565730/201593067-6f6790cf-4af3-4800-bb83-cdd2f40858d3.png)
+
+# Product Page -
+In this paga user will be able to see produts & add product to cart ,filter prpoduct according to his preference.
+![image](https://user-images.githubusercontent.com/101565730/201593278-b34d5c11-30f1-4fc4-82cb-a915887f2648.png)
 
 
 # Our Team Members:-
