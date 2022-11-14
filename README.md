@@ -19,7 +19,7 @@ Chakra-UI
 
 
 # Our Team Members:-
-Aman Bhutani
+Amit Bhutani
 
 Manoj Rathod
 
