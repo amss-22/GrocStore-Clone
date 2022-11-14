@@ -10,8 +10,11 @@ We had to make a replica CoSchedule website. They have completely transformed th
 
 # Tech Stacks-
 CSS,
+
 React,
+
 Redux,
+
 Chakra-UI
 
 
