@@ -53,4 +53,4 @@ Aditya Singh Ghosh
 
 
 # Learnings -
-We all became proficient in reading the code of team members. How to work and communicate with a team. How to be more efficient and productive at the same time. Here I get to know how the team works, how to keep cool even under pressure conditions, how to keep myself and my teammates motivated throughout the ups and downs. At last, I would like to thank our mentors and my team members for their support & guidance during the project. Source Code :https://github.com/amss-22/taboo-lock-5540(Our GitHub Link)
+We all became proficient in reading the code of team members. How to work and communicate with a team. How to be more efficient and productive at the same time. Here I get to know how the team works, how to keep cool even under pressure conditions, how to keep myself and my teammates motivated throughout the ups and downs. At last, I would like to thank our mentors and my team members for their support & guidance during the project. Source Code :https://github.com/amss-22/taboo-lock-5540      (Our GitHub Link)
