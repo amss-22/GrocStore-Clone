@@ -1,8 +1,11 @@
-import "./Scroll.Module.css"
-import React from "react"
-import styled from "@emotion/styled"
+import "./Scroll.Module.css";
+import React from "react";
+import styled from "@emotion/styled";
 import { BiUpArrowAlt } from 'react-icons/bi';
 import { useEffect,useState } from "react";
+
+
+
 const GoToTop = () => {
     const [isVisible ,setIsVisible] = useState(false)
     const goToBtn = () => {

@@ -6,7 +6,11 @@ import Product_card from "./Product_card";
 import { RiTruckFill } from "react-icons/ri";
 import { useLocation, useSearchParams } from "react-router-dom";
 
+
+
+
 const Product_right_grid = ({temp}) => {
+
   const [selectVal, setSelectVal] = useState("");
   const [quantity, setQuantity] = useState(1);
   const product_data = useSelector((store) => store.productdata.products);
@@ -25,13 +29,13 @@ const Product_right_grid = ({temp}) => {
     dispatch(getProduct(queryParams));
   }, [location.search]);
 
-  // console.log("filterd Data", product_data);
+  
   const onChangeHandle = (e) => {
     setSelectVal(e.target.value);
   };
   return (
     <Box pl={{ lg: "15px" }}>
-      {/* Product category title and number of product*/}
+      
       <Flex mb="2rem">
         <Text
           fontSize={{ base: "16px", md: "22px", lg: "20px" }}

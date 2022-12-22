@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Searchbar from './Searchbar'
-import { getProductsData } from '../../redux/NavigationReducer/action'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Searchbar from './Searchbar';
+import { getProductsData } from '../../redux/NavigationReducer/action';
+
+
 
 const SearchFunc = () => {
+
     const [query , setQuery]=useState("")
     const dispatch=useDispatch()
     const [suggestion ,setSuggestion]=useState([])
@@ -18,8 +21,7 @@ setQuery(data)
     },[])
     
         useEffect(()=>{
-              // dispatch(getProductsData()) 
-      //* filteration functionality will be done here 
+     
       
       if(query === ""){
             setSuggestion([])

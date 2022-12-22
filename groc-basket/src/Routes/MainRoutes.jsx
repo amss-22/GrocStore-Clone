@@ -1,18 +1,20 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import HomePage from "../pages/HomePage";
+import Login from "../pages/Login";
+import ProductPage from "../pages/ProductPage";
+import SingleProduct from "../pages/SingleProduct";
+import CartPage from "../pages/CartPage";
+import Signup from "../pages/Signup";
+import PrivateRouter from "./PrivateRoute";
+import { Admin } from "../pages/Admin";
+import { Checkout } from "../pages/Checkout";
 
-import React from 'react'
-import HomePage from "../pages/HomePage"
-import Login from "../pages/Login"
-import ProductPage from "../pages/ProductPage"
-import SingleProduct from "../pages/SingleProduct"
-import CartPage from "../pages/CartPage"
-import Signup from "../pages/Signup"
-import PrivateRouter from "./PrivateRoute"
-import { Admin } from "../pages/Admin"
-import { Checkout } from "../pages/Checkout"
+
 
 
 const MainRoutes = () => {
+  
   return (
     <div>
       <Routes>

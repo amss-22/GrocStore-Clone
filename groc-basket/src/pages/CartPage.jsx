@@ -1,12 +1,11 @@
 import { Heading, Flex, Box, Text, Button, Image } from '@chakra-ui/react';
 import React from 'react';
-// import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useSelector } from 'react-redux';
 import "./CartPage.css";
 import {Link} from "react-router-dom";
 import { resetList } from '../redux/CartReducer/action';
+
 
 
 const CartPage = () => {
@@ -76,10 +75,10 @@ const handleEmpty = ()=>{
       </tbody>
      </table>
      <div id='box'>
-     <Box w={100} h={"300px"} ml={40} mt={10}  >
+     <Box  className="empty_basket" >
           <Button id="empty" onClick={handleEmpty} >EMPTY BASKET</Button>
          <Link to="/"><Button bg={'yellow.300'} mt={32}  >CONTINUE SHOPPING</Button></Link>
-       </Box>
+       </Box >
                 <div id="subtotal">
                  <div>
                  <Text fontWeight={400}>Subtotal</Text>

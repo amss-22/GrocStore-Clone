@@ -1,5 +1,9 @@
-import "./Footer.Module.css"
+import "./Footer.Module.css";
+
+
+
 const Footer = () => {
+
     return (
         <>
             <div className="footer">
@@ -23,12 +27,8 @@ const Footer = () => {
                     <p className="footgreen">GS Wallet FAQs</p> 
                     <p className="footgreen">GS Wallet T&Cs</p> 
                     <p className="footgreen">Vendor Connect</p> 
-                
-
-
-
-
                 </div>
+
                 <div className="ourapp"><h1 className="footbig">Download Our App</h1> <br />
                     <div><img src="https://www.bbassets.com/static/v2608/custPage/build/content/img/Google-App-store-icon.png" alt="" /></div> <br />
                     <div><img src="https://www.bbassets.com/static/v2608/custPage/build/content/img/Apple-App-store-icon.png" alt="" /></div>
@@ -64,7 +64,7 @@ Fruits & Vegetables, Basmati Rice, Green Tea, OTC, Cheese, Dry Fruits, Chocolate
                 </div>
 
                 <div className="paymentfooter">
-                    <h1>PAYMENT OPTIONS:</h1>
+                    <h1 className="paymentfooter_h1">PAYMENT OPTIONS:</h1>
                     <div className="paymentimg">
                     <div><img src="https://w7.pngwing.com/pngs/703/625/png-transparent-cash-on-delivery-money-price-cheque-service-cash-on-delivery.png" alt="" /></div>
                     <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="" /></div>
@@ -81,8 +81,6 @@ Fruits & Vegetables, Basmati Rice, Green Tea, OTC, Cheese, Dry Fruits, Chocolate
             <div className="foot3">
                 <p>Copyright © 2021-2023 Supermarket Grocery Supplies Pvt Ltd</p>
             </div>
-            
-           
         </>
     )
 }

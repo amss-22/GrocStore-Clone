@@ -5,7 +5,10 @@ import { useSelector } from "react-redux";
 import BorderBottom from "../Component/Product_sections/BorderBottom";
 import { useSearchParams } from "react-router-dom";
 
+
+
 const ProductPage = () => {
+
   const [searchParam, setSearchParam] = useSearchParams();
   const [category, setCategory] = useState(searchParam.getAll("price") || []);
   const product_data = useSelector((store) => store.productdata.products);
@@ -17,7 +20,7 @@ const ProductPage = () => {
 
     let newCategory = [...category];
     if (newCategory.includes(option)) {
-      // if already available then remove it
+      
       newCategory.splice(newCategory.indexOf(option), 1);
     } else {
       if (option === "p1") {
@@ -25,7 +28,7 @@ const ProductPage = () => {
           return Number(item.price) < 20;
           
         });
-        // console.log(priceFilter)
+        
         setTemp(priceFilter);
         newCategory.push(option);
       }
@@ -41,7 +44,7 @@ const ProductPage = () => {
         let priceFilter = prod_array.filter((item) => {
           return Number(item.price)  < 100;
         });
-        // console.log("filter less than 21 && 50",priceFilter )
+        
         setTemp(priceFilter);
         newCategory.push(option);
       }
@@ -75,7 +78,7 @@ const ProductPage = () => {
     setSearchParam(params);
   }, [category, setSearchParam]);
 
-  // console.log("temp", temp)
+  
   return (
     <Box w={{ base: "90%", lg: "75%" }} m="auto">
       <Grid
@@ -101,7 +104,7 @@ const ProductPage = () => {
               </Text>
             </Box>
             <Box mb="2rem">
-              {/* Price*/}
+              
               <BorderBottom category="Price" />
               <Box>
                 <Stack spacing={[]} direction={["column"]}>
@@ -145,7 +148,7 @@ const ProductPage = () => {
             </Box>
 
             <Box mb="2rem">
-              {/* Discount*/}
+              
               <BorderBottom category="Discount" />
               <Box>
                 <Stack spacing={[]} direction={["column"]}>
@@ -158,7 +161,7 @@ const ProductPage = () => {
               </Box>
             </Box>
             <Box mb="2rem">
-              {/* Pack Size*/}
+              
               <BorderBottom category="Pack Size" />
               <Box>
                 <Stack spacing={[]} direction={["column"]}>

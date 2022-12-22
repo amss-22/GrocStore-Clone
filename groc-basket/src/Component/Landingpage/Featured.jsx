@@ -1,6 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
 
 const Featured = () => {
+    
     return (
         <>
               <h1 className="myb">Featured Recipes

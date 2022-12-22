@@ -1,17 +1,18 @@
 .newlaunch img{
- 
   width: 99.8%;
 }
+
 .newlaunch2{
     margin-top: 2%;
     display: flex;
     margin-bottom: 2%;
     justify-content: center;
 }
+
 .newlaunch2>img{
-    
     margin-left: 0.5rem;
 }
+
 .myb{
     font-family:ProximaNovaA-Regular;
     font-weight: 400;
@@ -24,14 +25,8 @@
     margin-bottom: 2%;
    
 }
+
 .myb2{
-    
-    
-    
-    
-    
-
-
     width: 87%;
     height: auto;
     margin: auto;
@@ -39,15 +34,18 @@
     display: flex;
     justify-content:space-around;
 }
+
 .bank{
     display: flex;
     width: 87%;
     margin: auto;
 }
+
 .bank img{
     width: 95%;
     height: 100%;
 }
+
 .hrbank{
     width: 87%;
     margin: auto;
@@ -56,33 +54,41 @@
     margin-bottom: 2%;
  
 }
+
 .Fruit{
     margin: auto;
     width: 87%;
     display: flex;
     margin-bottom: 2%;
 }
+
 .Fruit img{
     width: 100%;
 }
+
 .Fruit>div>img:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .kitchen{
     margin: auto;
     width: 87%;
     display: flex;
     margin-bottom: 2%;
 }
+
 .kitchen img{
     width: 100%;
 }
+
 .kitchen>div>img:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .bank>div>img:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .snack{
     font-family:ProximaNovaA-Regular;
     font-weight: 400;
@@ -94,20 +100,24 @@
     margin-top: 2%;
    
 }
+
 .brand{
     border: 1px solid rgb(201, 197, 197);
     margin: 0.5rem;
 }
+
 .beverage{
   
     display: flex;
     width: 87%;
     margin: auto;
 }
+
 .banner{
     width: 87%;
     margin: auto;
 }
+
 .bigo{
     border: 1px solid black;
     margin: auto;
@@ -115,6 +125,7 @@
     margin-top: 2%;
     margin-bottom: 3%;
 }
+
 .onlinegroc2{
     font-family:ProximaNFonovaA-Regular;
    font-size: 0.875rem;
@@ -124,6 +135,7 @@
  margin-left: 2%;
  
 }
+
 .onlinegroc{
     font-family:ProximaNovaA-Regular;
     font-size: 1.875rem;
@@ -134,6 +146,7 @@
     margin-top: 2%;
     margin-left: 2%;
 }
+
 .readmore{
     border: 1px solid black;
     width: 8%;
@@ -143,45 +156,53 @@
     margin-left: 2%;
     
 }
+
 .banner img{
     border: 1px solid rgb(201, 197, 197);
     width: 100%;
 }
+
 .vegispan{
     color: #67C71F;
 }
+
 .coffee{
   margin-left: 3%;
 }
+
 .coffee1{
     display: flex;
 }
+
 .beverg{
     border: 1px solid rgb(201, 197, 197);
 }
+
 .coff1{
     border: 1px solid rgb(201, 197, 197);
     margin-left: 2%;
     margin-bottom: 2%;
 }
+
 .coffee2{
     display: flex;
 }
-
 
 .box1{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     width: 40%;
     padding: 1rem;
 }
+
 .boximg1{
     width: 100%;
     height: auto;
 }
+
 .boximg1>img{
-   
     height: auto;
 }
+
 .tender{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -189,7 +210,6 @@
     line-height: normal;
     color:rgb(146, 155, 152);
    
-    
 }
 .mrs{
     font-family:ProximaNovaA-Regular;
@@ -199,7 +219,8 @@
     
     color:rgb(51, 51, 51);
    
-};
+}
+
 .fresio{
     font-family:ProximaNovaA-Regular;
     font-size: 0.6rem;
@@ -215,20 +236,55 @@
     line-height: 1rem;
     color:rgb(51, 51, 51);
 }
+
 .qty{
     border: 1px solid black;
     width: 20%;
     margin-right: 2%;
     }
+
     .qtyone{
         border: 1px solid black;
         width: 30%;
         text-align: center;
         margin-right: 2%;
     }
+
     .qtyadd{
         border: 1px solid black;
         background-color: #FBF799;
         width: 30%;
         margin-right: 2%;
+    }
+
+    @media (max-width: 1500px){
+        .newlaunch2{
+            width: 90%;
+            justify-content: center;
+            
+        }
+
+        .newlaunch2>img{
+    
+            width: 17%;
+            margin-top: 30px;
+            height: 60px;
+        }
+    
+    }
+    
+    
+    @media (max-width: 800px){
+        .newlaunch2{
+            width: 90%;
+            margin: auto;
+            
+        }
+
+        .newlaunch2>img{
+            width: 17%;
+            margin-top: 30px;
+            height: 30px;
+        }
+    
     }

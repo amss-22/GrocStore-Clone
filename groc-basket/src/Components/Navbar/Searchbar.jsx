@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { BsFillBagPlusFill } from 'react-icons/bs'
-import { FaRupeeSign } from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
-import styled from "styled-components"
-import { add_product_to_cart } from '../../redux/CartReducer/action'
-import { Link } from 'react-router-dom'
-import { setSingleData } from '../../redux/singleProductReducer/action'
-import { useToast } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react';
+import { BsFillBagPlusFill } from 'react-icons/bs';
+import { FaRupeeSign } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import styled from "styled-components";
+import { add_product_to_cart } from '../../redux/CartReducer/action';
+import { Link } from 'react-router-dom';
+import { setSingleData } from '../../redux/singleProductReducer/action';
+import { useToast } from '@chakra-ui/react';
+
+
+
 
 const Searchbar = ({queryhandle,suggestion}) => {
+
   const toast=useToast()
   const [inputtext , setInputText]=useState("")
   const [active , setActive]=useState(0)
@@ -18,11 +22,9 @@ const Searchbar = ({queryhandle,suggestion}) => {
     setInputText(e.target.value)
 
   }
-  // console.log(suggestion)
+  
 const handleActiveSuggestion=(e)=>{
-  // console.log(e.keyCode)
-  //38 for up
-  // 40 for down
+  
 switch(e.keyCode){
   case 38:
    return setActive(prev => prev-1);
@@ -40,7 +42,7 @@ switch(e.keyCode){
     queryhandle(inputtext)
 
   },[queryhandle,inputtext])
-  // console.log(active)
+  
 
   return (
     <Wrapper onKeyUp={handleActiveSuggestion}>
@@ -93,6 +95,16 @@ position: absolute;
 z-index:1000;
 background-color: white;
 width: 690px;
+@media (max-width: 1500px) {
+  flex-direction: column;
+  width: 50px;
+  
+}
+@media (max-width: 800px) {
+  flex-direction: column;
+  
+}
+
 
 
 
@@ -117,7 +129,19 @@ display: flex;
 align-items: center;
 paddding : 10px 5px;
 margin:auto;
-width: 500px
+width: 500px;
+@media (max-width: 1500px) {
+  
+  width: 10px;
+  margin-left:70%
+  
+}
+@media (max-width: 900px) {
+  flex-direction: column;
+  margin-left:20%
+  
+  
+}
 
 
 

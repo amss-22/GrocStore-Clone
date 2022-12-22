@@ -5,11 +5,12 @@
     justify-content: space-around;
     margin-top: 5%;
 }
+
 .footer2{
     margin: auto;
     width: 87%;
-    
 }
+
 .footbig{
     font-family:ProximaNovaA-Regular;
     font-size: 1rem;
@@ -17,37 +18,45 @@
     line-height:1.1rem;
     color:rgb(108, 209, 56);
 }
+
 .foothr{
     width: 87%;
     margin: auto;
     color: black;
     margin-top:1%;
-  
 }
+
 .category{
     display: flex;
-    justify-content:space-evenly;
+    width: 87%;
+    margin: auto;
+    justify-content:space-between;
 }
+
 .category h1{
-    
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1rem;
     color:rgb(108, 209, 56);
 }
+
 .category p{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.25rem;
     color:rgb(158, 156, 156)
-
 }
+
 .paymentfooter{
     display: flex;
-    margin-top: 2%;
+    margin-top: 3%;
+    margin: auto;
+    width: 95%;
+    justify-content: space-around;
 }
+
 .paymentfooter h1{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -57,20 +66,26 @@
     margin-left: 5%;
     width: 200%;
 }
+
 .paymentfooter >div>div>img{
    width: 100%;
    height: 100%;
+   
 }
+
 .paymentimg{
     display: flex;
     margin-left: 2%;
+    justify-content: space-around;
+    cursor: pointer;
 }
+
 .paymentfooter>div>div{
     height: 50%;
     width: 10%;
-    margin-left: 0.5%;
-    
+    margin-left: 0.5%; 
 }
+
 .brand{
     display: flex;
     border: none;
@@ -78,6 +93,7 @@
     margin-right: 6%;
     margin-top: 2%;
 }
+
 .brand h1{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -86,6 +102,7 @@
     color:rgb(108, 209, 56);
     margin-left: 0.7%;
 }
+
 .brand>p{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -102,6 +119,7 @@
     margin-top: 2%;
     
 }
+
 .serve h1{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -111,6 +129,7 @@
     margin-left: 1%;
    
 }
+
 .serve>p{
     font-family:ProximaNovaA-Regular;
     font-size: 0.875rem;
@@ -126,21 +145,21 @@
     font-weight: 400;
     color:rgb(128,128,144);
     line-height: 1.25rem;
-margin-top: 0.4rem;
-margin-bottom: 0.5rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
 }
+
 .socialimg{
    margin-top: 10%;
-    display: flex;
-    
+   display: flex;
 }
-.socialimg>div{
-border: 1px solid rgb(172, 169, 169);
-height: 3rem;
-width: 3rem;
-border-radius: 50%;
-margin-left: 3%;
 
+.socialimg>div{
+    border: 1px solid rgb(172, 169, 169);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-left: 3%;
 }
 .socialimg>div>img{
     width: 100%;
@@ -165,3 +184,55 @@ margin-left: 3%;
     margin-left: 8%;
  
  }
+
+
+ @media (max-width: 1500px){
+    .footer{
+        height: 250%;
+        width: 90%;
+    }
+    .category{
+        margin-top: 20px;
+        width: 100%;
+        margin-right: 20px;
+        
+    }
+
+    .brand{
+        width: 97%;
+        margin-right: 20px;
+    }
+
+    .paymentfooter{
+        justify-content: space-around;
+    }
+
+    .paymentimg{
+        justify-content: space-around;
+    }
+
+    .serve{
+        text-align: center;
+    }
+
+    .paymentfooter_h1{
+        margin-left: 20px;
+    }
+
+    .login_main{
+        margin-top: 70px;
+    }
+
+}
+
+
+@media (max-width: 800px){
+    .footer{
+        height: 500%;
+        width: 90%;
+        margin-top: 100px;
+        text-align: end;
+    }
+   
+
+}

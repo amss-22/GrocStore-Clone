@@ -1,4 +1,4 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
 
 
 const Cleaning = () => {

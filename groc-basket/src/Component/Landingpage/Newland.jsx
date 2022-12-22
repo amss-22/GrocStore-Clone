@@ -1,7 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
 
 
 const Newlaunch = () => {
+    
     return (
         <>
             <div className="newlaunch">

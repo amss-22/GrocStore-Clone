@@ -12,9 +12,7 @@ import categoryData from "./category.json";
 export const ShopByCategory = ({ sidebar, setSidebar }) => {
 
   const navigate=useNavigate()
-
-
-
+  
   return (
     
     <ShopByCategorySection

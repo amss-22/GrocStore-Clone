@@ -1,5 +1,9 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
+
+
 const Brand = () => {
+    
     return (
         <>
         <h1 className="myb">Brand Store

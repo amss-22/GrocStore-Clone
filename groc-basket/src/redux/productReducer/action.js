@@ -12,7 +12,7 @@ const getProduct = (queryParam) => (dispatch) => {
     .get(`http://localhost:8080/FruitsAndVegetables`, queryParam)
     .then((res) => {
       dispatch({ type: GET_PRODUCT_SUCCESS, payload: res.data });
-      // console.log("API NAME:- ", res)
+      
     })
     .catch(() => {
       dispatch({ type: GET_PRODUCT_FAILURE });

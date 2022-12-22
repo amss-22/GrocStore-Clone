@@ -4,24 +4,11 @@ import { TbTruckDelivery } from 'react-icons/tb';
 import { BsTruck } from 'react-icons/bs';
 import ReactImageMagnify from 'react-image-magnify';
 import { useSelector } from "react-redux";
-{/*const obj={
-    
-        "id":"1",
-        "mrp":30,
-        "brand":"Fresho", 
-        "discount": 24,
-        "src": "https://www.bigbasket.com/media/uploads/p/s/40130385_3-fresho-tomato-local-organically-grown.jpg",
-        "product_info": "Tomato - Local, Organically Grown (Loose)",
-        "weight": "1 kg",
-        "rating": 4.4,
-           "rating_number": 2826,
-        "price": "23.07",
-        "delievery_day_time": "Standard Delivery: Tomorrow 3:00PM - 7:30PM",
-        "qty": "Qty",
-        "add_btn": "Add" 
-     
-}*/}
+
+
+
 const SingleProduct = () => {
+    
   const obj = useSelector((state)=> state.SingleProductReducer.singleData)
   console.log("obj",obj)
     return (
@@ -76,11 +63,7 @@ const SingleProduct = () => {
             
             </h1>
             <div className="myb2">
-             {/*<Grid gridTemplateColumns="repeat(5, 1fr)">
-     {temp.map((item, id) => {
-      return <Product_card item={item} id={id} />;
-     })}
-    </Grid>*/}
+            
                 
                 
              <div className="box1">

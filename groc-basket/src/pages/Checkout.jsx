@@ -1,20 +1,22 @@
-import { Box, Heading, Input, Flex, Spacer, Text, Grid, Button } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Heading, Input, Flex, Spacer, Text, Grid, Button } from '@chakra-ui/react';
+import React from 'react';
 import {
     FormControl,
     FormLabel,
-  } from '@chakra-ui/react'
-  import { useToast } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+  } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+
+
 
 export const Checkout = () => {
+  
   const toast=useToast()
   let total = JSON.parse(localStorage.getItem("total"));
 
   const handleSub = ()=>{
     toast({
       title: "Payment SuccessFully",
-      // description: `${item.product_info}`,
       position: "top-center",
       status: "success",
       duration: 2000, 

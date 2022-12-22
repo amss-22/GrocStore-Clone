@@ -1,6 +1,5 @@
 import React from "react";
 import { add_product_to_cart } from "../../redux/CartReducer/action";
-
 import {
   Box,
   Flex,
@@ -24,11 +23,13 @@ import { setSingleData } from "../../redux/singleProductReducer/action";
 const Product_card = ({ item, id, quantity, setQuantity }) => {
   const toast = useToast();
   const dispatch = useDispatch();
-  // add to cart funtion
   const AddToCart = (item) => {
-    console.log("item", item)
-    dispatch(add_product_to_cart(item));
+  console.log("item", item)
+  dispatch(add_product_to_cart(item));
   };
+
+
+  
   return (
     <Box>
       

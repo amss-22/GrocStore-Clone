@@ -4,6 +4,9 @@ import { store} from "../redux/store";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
+import './login.css';
+
+
 
 const Signup = () => {
 
@@ -34,7 +37,7 @@ const Signup = () => {
     }
 
     return (
-        <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px",marginTop:"50px"}}>
+        <div className='signup_main' style={{}}>
 
             <h1 
             style={{
