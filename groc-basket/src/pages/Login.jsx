@@ -1,58 +1,59 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate,useLocation} from "react-router-dom";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 import './login.css';
-
 import { loginSuccess } from '../redux/AuthReducer/action';
 
 
 const Login = () => {
-  const Auth=useSelector((item)=> item.AuthReducer.isAuth)
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-
-  const navigate=useNavigate();
+  const Auth = useSelector ((item) => item.AuthReducer.isAuth);
+  const [show, setShow] = React.useState(false);
+  const handleClick = () => setShow(!show);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [email,setEmail]=useState("");
-  const [password,setPassword] = useState("");
-
 
   const user1 = useSelector(store => store.AuthReducer.userData);
   const admin = useSelector(store => store.AuthReducer.adminData);
  
 
-
   const handleSubmit = (e)=>{
+    e.preventDefault();
 
-    if(email === user1.email && password === user1.password) {
-      alert('Successfully loged in' )
-      dispatch(loginSuccess())
-      navigate('/Cart')
+    if(email === ""){
+      alert("Enter email")
+      return false;
 
-    }else if(email === admin.email && password === admin.password) {
-      alert('Welcome Admin' )
-      dispatch(loginSuccess())
-      navigate('/Admin')
+    }else if(password === ''){
+      alert("Enter password");
+      return false;
 
+    }else if(email !== user1.email || password !== user1.password) {
+      alert('Email or Password is wrong please check once' )
+      return false;
+
+    }  
+    else{
+      if(email === user1.email && password === user1.password) {
+        alert('Successfully loged in' )
+        dispatch(loginSuccess());
+        navigate('/Cart');
+  
+      }else if(email === admin.email && password === admin.password) {
+        alert('Welcome Admin' );
+        dispatch(loginSuccess());
+        navigate('/Admin');
+  
+      }
     }
-    else if(email === user1.email && password === ""){
-      alert('Please type your password')
-      
-    }else if(email === "" && password === user1.password){
-      alert('Please type your email')
 
-    }else if (email === "" && password === ""){
-      alert('Please type your email and Password')
 
-    }else{
-      alert('Wrong email or password')
-      
-    }
    
   };
   return (
@@ -66,8 +67,8 @@ const Login = () => {
   <form onSubmit={handleSubmit}>
 
     <div>
-            <h1 style={{marginTop:"15px"}}>Email</h1>
-            <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
+        <h1 style={{marginTop:"15px"}}>Email</h1>
+        <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
     </div>
         
 
@@ -93,17 +94,14 @@ const Login = () => {
         </div>
          
          <div style={{textAlign:"center",marginTop:"32px"}}>
-             <Button onClick={handleSubmit} colorScheme='teal' variant='outline' size='lg'>
+             <Button type="submit" colorScheme='teal' variant='outline' size='lg'>
              LOGIN
              </Button>
          </div>
          
-
       </form>
     </div>
   )
 }
 
 export default Login
-
-
