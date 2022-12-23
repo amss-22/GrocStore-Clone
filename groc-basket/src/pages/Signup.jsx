@@ -4,37 +4,90 @@ import { store} from "../redux/store";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
+import {useNavigate,useLocation} from "react-router-dom";
 import './login.css';
 
 
 
 const Signup = () => {
 
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show)
+    const [show, setShow] = React.useState(false);
+    const handleClick = () => setShow(!show);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setpassword] = useState("");
+    const [confirmPassword, setconfirmPassword] = useState("");
 
 
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setpassword] = useState("")
-    const [confirmPassword, setconfirmPassword] = useState("")
     const dispatch = useDispatch();
-
-    const user1 = useSelector(store => store.AuthReducer.userData);
-    const user = store.getState()
-    
-    // console.log('user:', user1 );
+    const user1 = useSelector (store => store.AuthReducer.userData);
+    const user = store.getState();
+    const navigate = useNavigate();
 
 
     const handleSubmit = () => {
+
+        const minLengthRegExp = /.{4,}/;
+        const uppercaseRegExp = /(?=.*?[A-Z])/;
+        const digitsRegExp = /(?=.*?[0-9])/;
+
+        const passwordLength = password.length;
+        const minLengthPassword = minLengthRegExp.test(password);
+        const uppercasePassword = uppercaseRegExp.test(password);
+        const digitsPassword = digitsRegExp.test(password);
+
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+         
+        if(name === ""){
+            alert("Please type your Name");
+            return false;
+
+        }else if(email === ""){
+            alert("Please type your Email");
+            return false;
+
+        }else if (!email.match(validRegex)) {
+            alert("Not Valid email address!");
+            return false;
+
+        }else if(passwordLength === 0){
+            alert("Password is empty");
+            return false;
+
+        }else if(confirmPassword === " "){
+            alert("Confirm Password is empty");
+            return false;    
+
+        }else if(!minLengthPassword){
+            alert("Password At least minumum 4 characters");
+            return false;
+            
+        }else if(!uppercasePassword){
+            alert("Please type At least one Uppercase in Password");
+            return false;
+            
+        }else if(!digitsPassword){
+            alert("Please type At least one digit in Password");
+            return false;
+
+        }else if(password !== confirmPassword ){
+            alert("Your Password and Confirm Password  didn't match");
+            return false;
+
+        }    
+            
         dispatch({
+
             type: "REGISTER",
             payload : {
                 id : (new Date).getTime(),
                 name, email, password
             }
         })
+        navigate('/login');
     }
+
 
     return (
         <div className='signup_main' style={{}}>
@@ -55,7 +108,7 @@ const Signup = () => {
             <Input placeholder='Enter Name' value={name}  onChange = {e => setName(e.target.value)} />
 
             <h1 style={{marginTop:"15px"}}>Email</h1>
-            <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
+            <Input placeholder='Enter Email' type={email} value={email}  onChange = {e => setEmail(e.target.value)} />
 
 
             <h1 style={{marginTop:"15px"}}>Password</h1>
@@ -101,10 +154,11 @@ const Signup = () => {
             <div style={{textAlign:"center",marginTop:"32px"}}>
             
 
-            <Link to="/login" >
+            
                 <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='outline' size='lg'>
                SIGN UP
-             </Button></Link>
+             </Button>
+             
             </div>      
         </div>
     )

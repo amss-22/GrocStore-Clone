@@ -34,8 +34,6 @@ import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-
-  const [isLargerThan100] = useMediaQuery('(min-width: 100px)')
   const [sidebar, setSidebar] = useState(false);
   const cart = useSelector((state) => state.cartReducer.cart);
  
@@ -96,11 +94,9 @@ const Navbar = () => {
 
           <SearchFunc />
           <Box display="flex">
-          
             <Box cursor="pointer">
               <Link to="/Cart">
-                {/* <AiOutlineShoppingCart size="30px"  /> */}
-                {isLargerThan100 ? <AiOutlineShoppingCart size="40px"  /> : <AiOutlineShoppingCart marginRight="200px"  />}
+                <AiOutlineShoppingCart size="30px" />
               </Link>
             </Box>
 
