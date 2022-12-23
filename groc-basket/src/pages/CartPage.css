@@ -72,3 +72,15 @@ padding: 10px;
   font-size: 18px;
   font-weight: 500;
 }
+.delet_button{
+  background-color: teal;
+  border-radius: 5px;
+  color: rgb(242, 228, 228);
+  border: 3px solid rgb(79, 79, 236);
+}
+.delet_button:hover{
+  background-color:rgb(229, 84, 84);
+  border-radius: 5px;
+  color: black;
+  border: 3px solid rgb(18, 229, 92);
+}
