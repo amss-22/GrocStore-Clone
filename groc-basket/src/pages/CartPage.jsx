@@ -42,7 +42,7 @@ const handleEmpty = ()=>{
             height: 3
         }}
        />
-     <table>
+     <table className='table_div'>
       <thead>
       <tr>
         <th>IMAGE</th>
@@ -63,11 +63,12 @@ const handleEmpty = ()=>{
             <td id="prod" >{item.product_info}</td>
             <td>{item.price}</td>
             <td id='qyt'>
-              <button onClick={()=> setAdd(add-1)} >-</button>
+              <button  onClick={()=> setAdd(add-1)} >-</button>
               <p>{add}</p>
-              <button onClick={()=> setAdd(add+1)} >+</button>
+              <button  onClick={()=> setAdd(add+1)} >+</button>
             </td>
             <td>{item.price*add}</td>
+            
           </tr>
         )
       })

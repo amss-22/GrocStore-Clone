@@ -6,7 +6,7 @@ const initialState={
     isLoading:false,
     isErroe:false,
     userData:{},
-    adminData:{id: 1668267255159, name: 'amit', email: 'amitbhutani95@gmail.com', password: 'Kailash123'}
+    adminData:{id: 1668267255159, name: 'amit', email: 'amitbhutani95@gmail.com', password: '1234'}
 
 }
 
