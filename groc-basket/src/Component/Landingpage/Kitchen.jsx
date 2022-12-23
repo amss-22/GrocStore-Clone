@@ -1,6 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
 
 const Kitchen = () => {
+    
     return (
         <>
         <h1 className="myb">Home & Kitchen Essentials

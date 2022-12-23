@@ -1,6 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
 
 const Snack = () => {
+    
     return (
         <>
         <h1 className="snack">Snack Store

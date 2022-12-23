@@ -4,13 +4,13 @@ import {useNavigate,useLocation} from "react-router-dom";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
+import './login.css';
 
 import { loginSuccess } from '../redux/AuthReducer/action';
 
 
 const Login = () => {
   const Auth=useSelector((item)=> item.AuthReducer.isAuth)
-// console.log(Auth)
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
@@ -24,10 +24,6 @@ const Login = () => {
 
   const user1 = useSelector(store => store.AuthReducer.userData);
   const admin = useSelector(store => store.AuthReducer.adminData);
-  // console.log("admin", admin)
-
-  
-  // console.log(user1.email);
  
 
 
@@ -60,18 +56,12 @@ const Login = () => {
    
   };
   return (
-    <div style={{width:"30%",margin:"auto",padding:"7px", boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px",marginTop:"50px"}}>
+    <div className='login_main' >
       
-    <h1 style={{
-    fontSize: "130%",
-    fontWeight: "bolder",
-    color: "green",
-    paddingBottom: "5px",
-    textAlign:"center"
-   
-}}>
-  Login to Groc Store
-  </h1>
+    <h1 className='login_h1'>
+       Login to Groc Store
+    </h1>
+    
   <div style={{color:"red", fontSize:"18px", textAlign:"center", marginTop:"10px"}}><Link to="/Signup" >Create an account.</Link></div>
   <form onSubmit={handleSubmit}>
 

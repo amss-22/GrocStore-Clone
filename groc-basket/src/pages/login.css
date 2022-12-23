@@ -1,0 +1,50 @@
+.login_main{
+    width: 30%;
+    margin: auto;
+    padding: 7px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    margin-top: 50px;
+}
+
+.login_h1{
+    font-size: 130%;
+    font-weight: bolder;
+    color: green;
+    padding-Bottom: 5px;
+    text-Align: center;
+}
+
+.signup_main{
+    width: 40%;
+    margin : auto;
+    padding: 7px; 
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    margin-top: 50px;
+}
+
+@media (max-width: 1500px){
+    .login_main{
+        width: 80%;
+        margin-top: 100px;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .footer{
+        width: 70%;
+        margin: auto;
+    }
+
+    .signup_main{
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 800px){
+    .login_main{
+        width: 90%;
+        margin-bottom: 80px;
+        margin-top: 50px;
+    }
+}

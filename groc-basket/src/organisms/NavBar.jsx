@@ -1,4 +1,4 @@
-// import SearchFunc from "../Components/SearchFunc"
+
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 
@@ -10,6 +10,7 @@ import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from '@chakra-ui/react'
 
 import { AiOutlineDown, AiOutlineShoppingCart } from "react-icons/ai";
 
@@ -33,10 +34,11 @@ import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const [isLargerThan100] = useMediaQuery('(min-width: 100px)')
   const [sidebar, setSidebar] = useState(false);
   const cart = useSelector((state) => state.cartReducer.cart);
-  // console.log(cart)
-  // console.log("cart",cart)
+ 
 
   return (
     <div>
@@ -94,9 +96,11 @@ const Navbar = () => {
 
           <SearchFunc />
           <Box display="flex">
+          
             <Box cursor="pointer">
               <Link to="/Cart">
-                <AiOutlineShoppingCart size="30px" />
+                {/* <AiOutlineShoppingCart size="30px"  /> */}
+                {isLargerThan100 ? <AiOutlineShoppingCart size="40px"  /> : <AiOutlineShoppingCart marginRight="200px"  />}
               </Link>
             </Box>
 
@@ -105,13 +109,7 @@ const Navbar = () => {
                 <Heading size="4x">Items:{cart.length}</Heading>
               </MenuButton>
 
-              {/* <MenuList>
-                    <MenuItem>acc</MenuItem>
-                    <MenuItem>Create a Copy</MenuItem>
-                    <MenuItem>Mark as Draft</MenuItem>
-                    <MenuItem>Delete</MenuItem>
-                    <MenuItem>Attend a Workshop</MenuItem>
-                  </MenuList>    */}
+              
                   <MenuList>
 
                   {cart.map((item,index)=> {

@@ -1,7 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
 
 
 const Fruit = () => {
+    
     return (
         <>
         <h1 className="myb">Fruits & Vegetables

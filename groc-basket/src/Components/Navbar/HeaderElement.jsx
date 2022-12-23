@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 
 
-
 export const ArrowDown = styled.div`
   width: 8px;
   height: 8px;
@@ -13,6 +12,14 @@ export const ArrowDown = styled.div`
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
   transition: all 0.2s ease-out;
+  @media (max-width: 1500px) {
+    flex-direction: column;
+    
+    
+  }
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 
@@ -28,8 +35,8 @@ export const ShopByCategorySection = styled.section`
     display: none;
   }
 
-  @media screen and (max-width: 870px) {
-    width: 70%;
+  @media screen and (max-width: 1500px) {
+    width: 30%;
     height: 100vh;
     position: absolute;
     flex-direction: column;
@@ -39,12 +46,24 @@ export const ShopByCategorySection = styled.section`
     z-index: 12000;
     background-color: #fff;
     transition: all 0.3s ease;
+    @media (max-width: 1500px) {
+      flex-direction: column;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
 
     > div {
       width: 100%;
       font-size: 12px;
       font-weight: 500;
       border-bottom: 1px solid #dedede;
+      @media (max-width: 1500px) {
+        flex-direction: column;
+      }
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
     }
 
     .on-sidebar-show {
@@ -218,7 +237,7 @@ export const CategoryDiv = styled.div`
 
   > .top_category {
     width: 250px;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     text-align: left;
     color: #555;
 
@@ -253,7 +272,7 @@ export const CategoryDiv = styled.div`
         position: absolute;
         top: 0;
         left: 21%;
-        line-height: 0.8rem;
+        line-height: 1rem;
         padding: 5px 0 0 12px;
         background-color: #eaeaea;
         transition: all 0.3s ease;

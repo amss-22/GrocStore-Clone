@@ -1,5 +1,10 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
+
+
 const Beverage = () => {
+
+    
     return (
         <>
             <h1 className="myb">Beverages

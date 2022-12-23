@@ -1,0 +1,30 @@
+
+@media (max-width: 1500px){
+    .myb{
+        width: 25%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        justify-content: center;
+        justify-content: space-around;
+        
+    }
+
+}
+
+@media (max-width: 800px){
+    .myb{
+        width: 75%;
+        margin-left: 70px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+     .myb2{
+        height: 200%;
+        width: 90%;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    
+}
