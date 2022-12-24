@@ -9,7 +9,7 @@ import {
 const getProduct = (queryParam) => (dispatch) => {
   dispatch({ type: GET_PRODUCT_REQUEST });
   axios
-    .get(`http://localhost:8080/FruitsAndVegetables`, queryParam)
+    .get(`https://tasty-shoulder-pads-bull.cyclic.app/FruitsAndVegetables`, queryParam)
     .then((res) => {
       dispatch({ type: GET_PRODUCT_SUCCESS, payload: res.data });
       

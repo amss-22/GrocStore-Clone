@@ -8,6 +8,7 @@ import { resetList } from '../redux/CartReducer/action';
 
 
 
+
 const CartPage = () => {
 const [cart, setCart] = useState([]);
 const [total, setTotal] = useState(0);
@@ -31,6 +32,7 @@ const handleEmpty = ()=>{
 }
 
 const setQty = (id)=>{
+
   let c = cart;
   c.map(c=>{
     if(c.id==id){
@@ -73,7 +75,6 @@ const deleteQty = (id)=>{
 const getTotal = ()=>{
   let t = 0;
   let c = cart;
-  console.log('hiiiiiiiiiiiii')
   console.log(c)
   c.map(item=>{
     t+= item.subtotal;

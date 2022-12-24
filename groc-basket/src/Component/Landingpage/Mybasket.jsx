@@ -1,6 +1,8 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
 import { TbTruckDelivery } from 'react-icons/tb';
 import './Mybasket.css';
+
+
 
 const Mybasket = () => {
     return (

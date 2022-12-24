@@ -47,10 +47,44 @@
     margin-top: 40px;
 }
 
-@media (max-width: 800px){
+.nav_div{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    
+}
+.nav_main{
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+@media (max-width: 900px){
     .login_main{
         width: 90%;
         margin-bottom: 80px;
         margin-top: 50px;
     }
+    .cart_icon{
+        /* border: 1px solid red; */
+        width: 100%;
+        margin-right: 200px;
+        margin: auto;
+        justify-content: end;
+    }
+    .nav_main{
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+}
+@media (max-width: 400px){
+    .cart_icon{
+        border: 1px solid red;
+        width: 100%;
+        margin-right: 100%;
+    }
+    .nav_main{
+        border: 1px solid red;
+        width: 100%;
+    }
+
 }

@@ -20,6 +20,9 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setSingleData } from "../../redux/singleProductReducer/action";
 
+
+
+
 const Product_card = ({ item, id, quantity, setQuantity }) => {
   const toast = useToast();
   const dispatch = useDispatch();
