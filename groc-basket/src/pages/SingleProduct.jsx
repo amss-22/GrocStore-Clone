@@ -1,9 +1,10 @@
-import React from "react"
-import "./Single.Module.css"
+import React from "react";
+import "./Single.Module.css";
 import { TbTruckDelivery } from 'react-icons/tb';
 import { BsTruck } from 'react-icons/bs';
 import ReactImageMagnify from 'react-image-magnify';
 import { useSelector } from "react-redux";
+
 
 
 

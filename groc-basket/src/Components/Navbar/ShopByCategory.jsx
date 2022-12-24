@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowDown } from "./HeaderElement";
 import { BiWallet } from 'react-icons/bi'
-import {
-  CategoryDiv,
-  ShopByCategorySection,
-  ShopSection,
-} from "./HeaderElement";
+import {CategoryDiv,ShopByCategorySection,ShopSection} from "./HeaderElement";
 import categoryData from "./category.json";
+
+
 
 export const ShopByCategory = ({ sidebar, setSidebar }) => {
 

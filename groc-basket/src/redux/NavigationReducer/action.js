@@ -23,7 +23,7 @@ const getDataSuccess=(payload)=>{
 const getProductsData=(params)=> (dispatch)=>{
     dispatch(getDataRequest())
     return (
-        axios.get(`http://localhost:8080/Navbar`,params).then((r)=>{
+        axios.get(`https://tasty-shoulder-pads-bull.cyclic.app/Navbar`,params).then((r)=>{
         //    console.log(r.data)
            dispatch(getDataSuccess(r.data)) 
         })

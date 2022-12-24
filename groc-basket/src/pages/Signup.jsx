@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import { store} from "../redux/store";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
-import { Link } from "react-router-dom";
-import {useNavigate,useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import './login.css';
+import {Alert,AlertIcon,AlertTitle,AlertDescription} from '@chakra-ui/react';
+
 
 
 
@@ -17,6 +18,24 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setpassword] = useState("");
     const [confirmPassword, setconfirmPassword] = useState("");
+    const [success, setSuccess] = useState(false);
+
+    const successmsg = <Alert
+    status='success'
+    variant='subtle'
+    flexDirection='column'
+    alignItems='center'
+    justifyContent='center'
+    textAlign='center'
+    height='200px'
+    ><AlertIcon boxSize='40px' mr={0} />
+    <AlertTitle mt={4} mb={1} fontSize='lg'>
+      Application submitted!
+    </AlertTitle>
+    <AlertDescription maxWidth='sm'>
+      Thanks for creating your Account. Your Account has been created.
+    </AlertDescription>
+    </Alert>
 
 
     const dispatch = useDispatch();
@@ -35,6 +54,7 @@ const Signup = () => {
         const minLengthPassword = minLengthRegExp.test(password);
         const uppercasePassword = uppercaseRegExp.test(password);
         const digitsPassword = digitsRegExp.test(password);
+
 
         var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -75,7 +95,7 @@ const Signup = () => {
             alert("Your Password and Confirm Password  didn't match");
             return false;
 
-        }    
+        }
             
         dispatch({
 
@@ -85,13 +105,20 @@ const Signup = () => {
                 name, email, password
             }
         })
-        navigate('/login');
+
+        setSuccess(true);
+        setTimeout(() => {
+            navigate('/login');
+        }, 1200);
+       
+        
     }
 
 
     return (
+        <>
+        {success && successmsg}
         <div className='signup_main' style={{}}>
-
             <h1 
             style={{
                 fontSize: "130%",
@@ -102,7 +129,8 @@ const Signup = () => {
                 }}>
                 Sign up to create an account
             </h1>
-
+            <br />
+            
 
             <label>Name</label>
             <Input placeholder='Enter Name' value={name}  onChange = {e => setName(e.target.value)} />
@@ -151,16 +179,16 @@ const Signup = () => {
 
         </div>
             
-            <div style={{textAlign:"center",marginTop:"32px"}}>
-            
-
-            
-                <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='outline' size='lg'>
+            <div className='loginin_btn'>            
+                <Button value= "Sign Up" onClick = {handleSubmit} colorScheme='teal' variant='solid' size='lg'>
+                    
                SIGN UP
              </Button>
-             
-            </div>      
+            </div>   
+
         </div>
+        </>
+        
     )
 }
 

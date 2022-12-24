@@ -1,4 +1,5 @@
-import "./Landing.Module.css"
+import "./Landing.Module.css";
+
 
 const Beauty = () => {
     return (

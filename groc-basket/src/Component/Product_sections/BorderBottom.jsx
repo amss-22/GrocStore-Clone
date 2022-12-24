@@ -3,6 +3,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 
 
+
 const BorderBottom = ({ category }) => {
   
   return (

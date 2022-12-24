@@ -8,30 +8,80 @@ import { resetList } from '../redux/CartReducer/action';
 
 
 
+
 const CartPage = () => {
-const [add, setAdd] = useState(1);
+const [cart, setCart] = useState([]);
+const [total, setTotal] = useState(0);
 const dispatch = useDispatch();
 
-const cart = useSelector(store=> store.cartReducer.cart);
- console.log("cart", cart);
+const c = useSelector(store=> store.cartReducer.cart);
+ console.log("cart", c);
+ 
+ setTimeout(()=>{
+  getTotal();
+},100);
 
- let total = 0;
-const tsum = [];
-
-cart.map((item)=>{
- return tsum.push(item.price);
-})
- for(let i=0; i<cart.length; i++){
-     total +=  Math.floor(+(tsum[i]));
- }
-console.log("total:", total)
-
-localStorage.setItem("total", JSON.stringify(total))
+ React.useEffect(()=>{
+  setCart([...c]);
   
+ },[])
+
+ 
 const handleEmpty = ()=>{
      dispatch(resetList())
 }
 
+const setQty = (id)=>{
+
+  let c = cart;
+  c.map(c=>{
+    if(c.id==id){
+      c.qty+=1;
+      console.log(c.qty,parseInt(c.price),c.subtotal)
+      let price = c.qty*parseInt(c.price);
+      c.subtotal = price;
+    }
+  });
+
+  getTotal();
+
+  setCart([...c]);
+}
+
+const removeQty = (id)=>{
+  getTotal();
+  let c = cart;
+  c.map(c=>{
+    if(c.id==id){
+      if(c.qty>1){
+        c.qty-=1;
+        let price = c.qty*parseInt(c.price);
+        c.subtotal = price;
+      }
+      
+    }
+  });
+  setCart([...c]);
+}
+const deleteQty = (id)=>{
+  getTotal();
+  let c = cart;
+  c = c.filter(ca=>ca.id!=id);
+  console.log(c)
+  setCart([...c]);
+  
+}
+
+const getTotal = ()=>{
+  let t = 0;
+  let c = cart;
+  console.log(c)
+  c.map(item=>{
+    t+= item.subtotal;
+  });
+  
+  return setTotal(t.toFixed(2));
+}
 
   return (
     <div  >
@@ -42,13 +92,14 @@ const handleEmpty = ()=>{
             height: 3
         }}
        />
-     <table>
+     <table className='table_div'>
       <thead>
       <tr>
         <th>IMAGE</th>
           <th>ITEM DESCRIPTION</th>
           <th>UNIT PRICE</th>
           <th>QUANTITY</th>
+          <th>ACTION</th>
           <th>SUBTOTAL</th>
       </tr>
       </thead>
@@ -59,15 +110,20 @@ const handleEmpty = ()=>{
           <tr key={item.id}>
             <td>
               <Image ml={20} w={"80px"}  h={"90px"} src={item.img_src} />
+              <hr style={{border:"2px solid green", width:"504%", backgroundColor: "green"}} />
             </td>
             <td id="prod" >{item.product_info}</td>
             <td>{item.price}</td>
             <td id='qyt'>
-              <button onClick={()=> setAdd(add-1)} >-</button>
-              <p>{add}</p>
-              <button onClick={()=> setAdd(add+1)} >+</button>
+              <button  onClick={()=>removeQty(item.id)} >-</button>
+              <p>{item.qty}</p>
+              <button  onClick={()=>setQty(item.id)} >+</button>
             </td>
-            <td>{item.price*add}</td>
+            <td id='dlet'>
+              <button  onClick={()=>deleteQty(item.id)} className="delet_button" >Remove</button>
+            </td>
+            <td>{item.subtotal}</td>
+            
           </tr>
         )
       })

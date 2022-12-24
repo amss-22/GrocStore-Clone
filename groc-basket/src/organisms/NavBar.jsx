@@ -1,7 +1,6 @@
 
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-
 import SearchFunc from "../Components/Navbar/SearchFunc";
 import styled from "styled-components";
 import { BsTelephoneOutbound, IconName } from "react-icons/bs";
@@ -10,10 +9,8 @@ import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { BsBasketFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from '@chakra-ui/react'
-
+import { useMediaQuery } from '@chakra-ui/react';
 import { AiOutlineDown, AiOutlineShoppingCart } from "react-icons/ai";
-
 import {
   Menu,
   MenuButton,
@@ -30,8 +27,11 @@ import {
 } from "@chakra-ui/react";
 import image from "../images/logo.png";
 import { ShopByCategory } from "../Components/Navbar/ShopByCategory";
-
 import { useSelector } from "react-redux";
+import '../pages/Login';
+
+
+
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -39,8 +39,8 @@ const Navbar = () => {
  
 
   return (
-    <div>
-      <Box display="flex" justifyContent="end" gap="20px">
+    <div className="nav_main">
+      <Box className="nav_div" >
         <Box display="flex" gap="2px" px="20px">
           <div>
             <BsTelephoneOutbound color="#012652" />
@@ -101,7 +101,7 @@ const Navbar = () => {
             </Box>
 
             <Menu>
-              <MenuButton as={Button} rightIcon={<AiOutlineDown />} bg="">
+              <MenuButton as={Button} className="cart_icon" rightIcon={<AiOutlineDown />} bg="">
                 <Heading size="4x">Items:{cart.length}</Heading>
               </MenuButton>
 
