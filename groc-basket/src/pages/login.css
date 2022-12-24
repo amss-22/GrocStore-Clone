@@ -54,7 +54,6 @@
     
 }
 .nav_main{
-    /* border: 1px solid red; */
     width: 100%;
 }
 
@@ -65,25 +64,22 @@
         margin-top: 50px;
     }
     .cart_icon{
-        /* border: 1px solid red; */
         width: 100%;
         margin-right: 200px;
         margin: auto;
         justify-content: end;
     }
     .nav_main{
-        /* border: 1px solid red; */
+        
         width: 100%;
     }
 }
 @media (max-width: 400px){
     .cart_icon{
-        border: 1px solid red;
         width: 100%;
         margin-right: 100%;
     }
     .nav_main{
-        border: 1px solid red;
         width: 100%;
     }
 
