@@ -2,7 +2,8 @@
     width: 30%;
     margin: auto;
     padding: 7px;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 15px;
     margin-top: 50px;
 }
 
@@ -18,7 +19,8 @@
     width: 40%;
     margin : auto;
     padding: 7px; 
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 15px;
     margin-top: 50px;
 }
 
@@ -39,6 +41,10 @@
         width: 90%;
     }
 
+}
+.loginin_btn{
+    text-align: center;
+    margin-top: 40px;
 }
 
 @media (max-width: 800px){

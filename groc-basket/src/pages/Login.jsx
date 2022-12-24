@@ -1,17 +1,26 @@
 import React,{useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {useNavigate,useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { Button,InputGroup,InputRightElement } from '@chakra-ui/react';
 import { Input } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 import './login.css';
 import { loginSuccess } from '../redux/AuthReducer/action';
+import {Alert,AlertIcon} from '@chakra-ui/react';
+
+
 
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [logincomplite, setLogincomplite] = useState(false);
+
+  const loginsuccessmsg = <Alert status='success' variant='solid'>
+      <AlertIcon />
+           Login Successful
+      </Alert>
 
   const Auth = useSelector ((item) => item.AuthReducer.isAuth);
   const [show, setShow] = React.useState(false);
@@ -41,11 +50,15 @@ const Login = () => {
     }  
     else{
       if(email === user1.email && password === user1.password) {
-        alert('Successfully loged in' )
-        dispatch(loginSuccess());
-        navigate('/Cart');
+
+        setLogincomplite(true);
+        setTimeout(() => {
+          dispatch(loginSuccess());
+          navigate('/Cart');
+        }, 1000);
   
       }else if(email === admin.email && password === admin.password) {
+
         alert('Welcome Admin' );
         dispatch(loginSuccess());
         navigate('/Admin');
@@ -57,23 +70,23 @@ const Login = () => {
    
   };
   return (
+    <>
     <div className='login_main' >
+       {logincomplite && loginsuccessmsg}
       
     <h1 className='login_h1'>
        Login to Groc Store
     </h1>
     
-  <div style={{color:"red", fontSize:"18px", textAlign:"center", marginTop:"10px"}}><Link to="/Signup" >Create an account.</Link></div>
-  <form onSubmit={handleSubmit}>
+    <div style={{color:"red", fontSize:"18px", textAlign:"center", marginTop:"10px"}}><Link to="/Signup" >Create an account.</Link></div>
+    <form onSubmit={handleSubmit}>
 
     <div>
         <h1 style={{marginTop:"15px"}}>Email</h1>
         <Input placeholder='Enter Email' value={email}  onChange = {e => setEmail(e.target.value)} />
     </div>
         
-
-        
-        <h1 style={{marginTop:"15px"}}>Password</h1>
+     <h1 style={{marginTop:"15px"}}>Password</h1>
         <div>
 
           <InputGroup size='md'>
@@ -93,14 +106,16 @@ const Login = () => {
           </InputGroup>
         </div>
          
-         <div style={{textAlign:"center",marginTop:"32px"}}>
-             <Button type="submit" colorScheme='teal' variant='outline' size='lg'>
+         <div className='loginin_btn'>
+             <Button type="submit" colorScheme='teal' variant='solid' size='lg'>
              LOGIN
              </Button>
          </div>
          
       </form>
     </div>
+    </>
+    
   )
 }
 
