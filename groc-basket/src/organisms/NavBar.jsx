@@ -1,24 +1,16 @@
-
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import SearchFunc from "../Components/Navbar/SearchFunc";
-import styled from "styled-components";
-import { BsTelephoneOutbound, IconName } from "react-icons/bs";
+import { BsTelephoneOutbound} from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
-import { BsBasketFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from '@chakra-ui/react';
 import { AiOutlineDown, AiOutlineShoppingCart } from "react-icons/ai";
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
   MenuGroup,
-  MenuOptionGroup,
   MenuDivider,
   Button,
   Box,
@@ -79,15 +71,8 @@ const Navbar = () => {
         </Menu>
       </Box>
 
-      <Box bg="#e0e0d1">
-        <Box
-          display="flex"
-          width="90%"
-          margin="auto"
-          justifyContent="space-between"
-          alignItems="center"
-          position="relative"
-        >
+      <Box className="center_nav" bg="#e0e0d1">
+        <Box className="center_nav_child">
           <Link to="/">
             <Image src={image} alt="Dan Abramov" boxSize="70px" />
           </Link>

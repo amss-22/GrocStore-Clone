@@ -24,6 +24,15 @@
     margin-top: 50px;
 }
 
+.center_nav_child{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
 @media (max-width: 1500px){
     .login_main{
         width: 80%;
@@ -40,6 +49,14 @@
     .signup_main{
         width: 90%;
     }
+    .center_nav{
+        width: 100%;
+    }
+    .center_nav_child{
+        /* width: 100%; */
+        justify-content: space-around;
+    
+    }
 
 }
 .loginin_btn{
@@ -55,6 +72,7 @@
 }
 .nav_main{
     width: 100%;
+    
 }
 
 @media (max-width: 900px){
@@ -73,6 +91,14 @@
         
         width: 100%;
     }
+    .center_nav{
+        width: 100%;
+    }
+    .center_nav_child{
+        width: 100%;
+        justify-content: space-around;
+    
+    }
 }
 @media (max-width: 400px){
     .cart_icon{
@@ -81,6 +107,81 @@
     }
     .nav_main{
         width: 100%;
+    }
+    .center_nav{
+        width: 100%;
+    }
+    .center_nav_child{
+        width: 100%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 800px){
+    .center_nav_child{
+        width: 90%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 730px){
+    .center_nav_child{
+        width: 80%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 680px){
+    .center_nav_child{
+        width: 70%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 630px){
+    .center_nav_child{
+        width: 55%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 630px){
+    .center_nav_child{
+        width: 55%;
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width: 560px){
+    .center_nav_child{
+        width: 15%;
+        justify-content: space-around;
+        
+    
+    }
+
+}
+@media (max-width: 444px){
+    .center_nav_child{
+        width: 2%;
+        justify-content: space-around;
+        
+    
+    }
+
+}
+@media (max-width: 385px){
+    .center_nav_child{
+        width: -20%;
+        justify-content: space-around;
+        
+    
     }
 
 }

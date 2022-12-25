@@ -95,15 +95,7 @@ position: absolute;
 z-index:1000;
 background-color: white;
 width: 690px;
-@media (max-width: 1500px) {
-  flex-direction: column;
-  width: 50px;
-  
-}
-@media (max-width: 800px) {
-  flex-direction: column;
-  
-}
+
 
 
 
@@ -130,18 +122,7 @@ align-items: center;
 paddding : 10px 5px;
 margin:auto;
 width: 500px;
-@media (max-width: 1500px) {
-  
-  width: 10px;
-  margin-left:70%
-  
-}
-@media (max-width: 900px) {
-  flex-direction: column;
-  margin-left:20%
-  
-  
-}
+
 
 
 
