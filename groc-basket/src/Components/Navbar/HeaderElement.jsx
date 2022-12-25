@@ -12,14 +12,7 @@ export const ArrowDown = styled.div`
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
   transition: all 0.2s ease-out;
-  @media (max-width: 1500px) {
-    flex-direction: column;
-    
-    
-  }
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
+ 
 `;
 
 
@@ -46,24 +39,14 @@ export const ShopByCategorySection = styled.section`
     z-index: 12000;
     background-color: #fff;
     transition: all 0.3s ease;
-    @media (max-width: 1500px) {
-      flex-direction: column;
-    }
-    @media (max-width: 800px) {
-      flex-direction: column;
-    }
+    
 
     > div {
       width: 100%;
       font-size: 12px;
       font-weight: 500;
       border-bottom: 1px solid #dedede;
-      @media (max-width: 1500px) {
-        flex-direction: column;
-      }
-      @media (max-width: 800px) {
-        flex-direction: column;
-      }
+      
     }
 
     .on-sidebar-show {

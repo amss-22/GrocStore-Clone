@@ -110,7 +110,7 @@ const getTotal = ()=>{
           <tr key={item.id}>
             <td>
               <Image ml={20} w={"80px"}  h={"90px"} src={item.img_src} />
-              <hr style={{border:"2px solid green", width:"504%", backgroundColor: "green"}} />
+              <hr style={{border:"2px solid green", width:"512%", backgroundColor: "green"}} />
             </td>
             <td id="prod" >{item.product_info}</td>
             <td>{item.price}</td>
